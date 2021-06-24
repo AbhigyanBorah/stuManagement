@@ -37,7 +37,7 @@ input[type=text] {
   
         <div class="my-container" style="float:right;">
     <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
+        <input type="text" placeholder="Search.." name="search"></input>
       <button class="my-btn my-text-white" style="float:right;  margin-top: 8px;margin-right: 16px;font-size: 17px; background-color:#065f7a; " type="submit"><i class="fa fa-search my-large"></i></button>
     </form>
   </div>
