@@ -1,9 +1,9 @@
-<?php 
+<?php
 	session_start();
 	if(!isset($_SESSION["username"]))
 	{
 		header("location:index.php?login=fail");
-		return;	
+		return;
 	}
 ?>
 <!doctype html>
@@ -32,7 +32,7 @@ height: 100%;
   width: 100%;
   height:0;
   transition: .5s ease;
-   
+
 }
 .overlay2 {
   position:absolute;
@@ -44,7 +44,7 @@ height: 100%;
   width: 100%;
   height:0;
   transition: .5s ease;
-  
+
 }
 .overlay3 {
   position:absolute;
@@ -56,7 +56,7 @@ height: 100%;
   width: 100%;
   height:0;
   transition: .5s ease;
-  
+
 }
 .container {
   position: relative;
@@ -84,11 +84,26 @@ height: 100%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 80px;
+   background-color: black;
+   color: white;
+   text-align: center;
+   opacity: 0.95;
+}
+.border-green{
+    border-color:#03554a!important;
+    border-top:10px solid #03554a!important;
+}
 
 </style>
 </head>
 <body>
-    
+
 
     <div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none" id="mySidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="my_close()">&times;</a>
@@ -96,25 +111,25 @@ height: 100%;
         <a href="admin.php" class="my-bar-item">Log Out</a>
         </div>
 
-        <div class="my-container my-card-4" style="height: 250px; background: linear-gradient(to top, #03554a, #03554a);">
+        <div class="my-container my-card-4" style="height: 150px; background: linear-gradient(to top, #03554a, #03554a);">
         <button id="openNav" class="my-btn my-text-white my-xxlarge" onclick="my_open()">&#9776;</button>
 
-        
+
 
         <div id="main">
-          
-          
-           
-            <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);">
+
+
+
+            <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:-65px;">
               JEC MCA<br>
               Student Management</h1>
             </div>
-            
-             
+
+
             <br><br><br><br><br><br>
             <div class="my-content">
             <div class="my-row">
-               
+
               <div class="my-third my-container ">
                 <div class="container">
                  <div class="my-card" style="height: 400px; text-align: center;">
@@ -148,15 +163,19 @@ height: 100%;
                </div>
                </div>
 
-             </div> 
+             </div>
 
-          </div>  
+          </div>
+          <div class="footer my-card-4 my-topbar my-border-top border-green">
+              <p>Footer</p>
+          </div>
 
-        
-        </div>
-  
 
 
+      </div>
+
+
+				
 
 
 
@@ -174,6 +193,20 @@ height: 100%;
               document.getElementById("mySidebar").style.display = "none";
               document.getElementById("mySidebar1").style.display = "none";
               document.getElementById("openNav").style.display = "inline-block";
+            }
+        </script>
+        <script>
+          window.onscroll = function() {myFunction()};
+
+         var navbar = document.getElementById("navbar");
+         var sticky = navbar.offsetTop;
+
+            function myFunction() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
             }
         </script>
 
