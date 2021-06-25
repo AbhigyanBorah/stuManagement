@@ -20,7 +20,7 @@ include "session.php"
    bottom: 0;
    width: 100%;
    height: 80px;
-   background: linear-gradient(to right, #03552a, #03557a);
+   background: linear-gradient(to right, #012512, #002231);
    color: white;
    text-align: center;
    
@@ -59,9 +59,9 @@ include "session.php"
             <div class="my-content">
             <div class="my-row">
 
-              <div class="my-third my-container ">
+              <div class="my-third my-container">
                 <div class="container">
-                 <div class="my-card" style="height: 400px; text-align: center;">
+                 <div class="my-card my-white" style="height: 400px; text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay">
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> 0 <br><p><a href="dustudents.php"><button class="my-btn my-btn-hover">View</button></a></p> </div>
                   </div>
@@ -72,7 +72,7 @@ include "session.php"
 
                <div class="my-third my-container">
                 <div class="container">
-                <div class="my-card" style="height: 400px;text-align: center;">
+                <div class="my-card my-white" style="height: 400px;text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay2">
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students  <br> 0 <br><p><a href="astu3students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
                   </div>
@@ -83,7 +83,7 @@ include "session.php"
 
                <div class="my-third my-container">
                 <div class="container">
-                <div class="my-card" style="height: 400px;text-align: center;">
+                <div class="my-card my-white" style="height: 400px;text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay3">
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> 0 <br><p><a href="astu2students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
                    </div>

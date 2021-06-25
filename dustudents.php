@@ -60,14 +60,14 @@ input[type=text] {
                                 <td style="width:20%; text-align:center;"></td>
                                 <td style="width:20%; text-align:center;"></td>
                                 <td style="width:20%; text-align:center;"></td>
-                                <td style="width:20%; text-align:center;"> <a href="photo.php?id='.$row[0].'">More Details</a></td>
+                                <td style="width:20%; text-align:center;"> <a href="DUstuDetails.php?id='.$row[0].'">More Details</a></td>
                                 
                         </tr>
                         
                     
                 </tbody>
             </table>
-      
+        
     </div>
 </div>
 
