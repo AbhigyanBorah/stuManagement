@@ -8,6 +8,7 @@ include "session.php"
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
+<link rel="stylesheet" type="text/css" href="css/sticky.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Home</title>
 <style>
@@ -27,7 +28,9 @@ input[type=text] {
 </style>
 </head>
 <body>
-<button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button> 
+<div id="navbar">
+<button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button>
+</div>
 
     <div class="my-content">
         <div class="my-container">
@@ -65,6 +68,23 @@ input[type=text] {
       
     </div>
 </div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
 
 </body>
 </html>

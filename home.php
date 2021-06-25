@@ -20,14 +20,14 @@ include "session.php"
    bottom: 0;
    width: 100%;
    height: 80px;
-   background-color: black;
+   background: linear-gradient(to right, #03552a, #03557a);
    color: white;
    text-align: center;
-   opacity: 0.95;
+   
 }
-.border-green{
-    border-color:#03554a!important;
-    border-top:10px solid #03554a!important;
+.border-black{
+    border-color:black!important;
+    border-top:10px solid black!important;
 }
 </style>
 </head>
@@ -38,9 +38,9 @@ include "session.php"
         <a href="javascript:void(0)" class="closebtn" onclick="my_close()">&times;</a>
         <a href="admin.php" class="my-bar-item">Change Password</a>
         <a href="admin.php" class="my-bar-item">Log Out</a>
-        </div>
+    </div>
 
-        <div class="my-container my-card-4" style="height: 150px; background: linear-gradient(to top, #03554a, #03554a);">
+        <div class="my-container my-card-4" style="height: 150px; background: linear-gradient(to left, #03553a, #03558a);">
         <button id="openNav" class="my-btn my-text-white my-xxlarge" onclick="my_open()">&#9776;</button>
 
 
@@ -95,7 +95,7 @@ include "session.php"
              </div>
 
           </div>
-          <div class="footer my-card-4 my-topbar my-border-top border-green">
+          <div class="footer my-card-4">
               <p>Footer</p>
           </div>
 
@@ -110,10 +110,10 @@ include "session.php"
 
         <script>
             function my_open() {
-              document.getElementById("main").style.marginLeft = "20%";
-              document.getElementById("mySidebar").style.width = "20%";
+              document.getElementById("main").style.marginLeft = "10%";
+              document.getElementById("mySidebar").style.width = "12%";
               document.getElementById("mySidebar").style.display = "block";
-              document.getElementById("mySidebar1").style.width = "20%";
+              document.getElementById("mySidebar1").style.width = "12%";
               document.getElementById("mySidebar1").style.display = "block";
               document.getElementById("openNav").style.display = 'none';
             }
