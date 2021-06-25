@@ -1,17 +1,25 @@
 <?php
+
 session_start();
+
 include "connect.php";
+
 if(isset($_POST["submit"]))
 {
 	$userid=$_POST["username"];
 	$upass=$_POST["password"];
 	
-	$sql="select password from admin where username='$userid'";
+	$sql="select password from admin where username='$userid' AND password = '$upass' ";
 	$result=mysqli_query($link,$sql);
 	$n=mysqli_num_rows($result);
-	if($n==0)
+	if($n==1)
 	{
-		header("location:index.php?log=0");
+		session_start();
+		$_SESSION['loggedin'] = true;
+		$_SESSION['username'] = $userid;
+
+		header("location:home.php");
+
         
 	}
 	else
