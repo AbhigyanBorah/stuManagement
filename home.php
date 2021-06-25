@@ -13,7 +13,23 @@ include "session.php"
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Home</title>
-
+<style>
+  .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 80px;
+   background-color: black;
+   color: white;
+   text-align: center;
+   opacity: 0.95;
+}
+.border-green{
+    border-color:#03554a!important;
+    border-top:10px solid #03554a!important;
+}
+</style>
 </head>
 <body>
 
