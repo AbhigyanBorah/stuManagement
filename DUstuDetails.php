@@ -35,13 +35,215 @@ height: 100%;
             <a href="addnotice.php" class="my-btn my-block my-padding my-text-white" style="width:260px; margin-left: 70px; margin-top:50px; background-color: #065f7a;">EDIT DETAILS</a>
         </div>
         <div class="my-quarter">
-            <div class="my-container my-white my-card" style="height:860px;">
-          
+            <div class="my-container my-white my-card" style="height:860px;"><br>
+                <div class="my-container">
+                    <br>
+                    <p>
+                        Roll No.:
+                    </p><br>
+                    <p>
+                        Registration No.:
+                    </p> <br>
+                    <p>
+                        Name:
+                    </p> <br>
+                    <p>
+                        Address:
+                    </p> <br>
+                    <p>
+                        Phone No.:
+                    </p> <br>
+                    <p>
+                        E-mail:
+                    </p><br>
+                    <p>
+                        Date Of birth:
+                    </p> <br>
+                    <p>
+                        Qualification: 
+                    </p> <br>
+                    <p>
+                        Batch:
+                    </p><br>
+                    <p>
+                        Board:
+                    </p><br>
+                </div>
         </div>
         </div>
         <div class="my-half">
             <div class="my-container my-white my-card" style="height:860px;">
-         
+            <p class="my-center my-large">MARKS</p>
+                <div class="my-responsive">
+                <p>
+                        Semester 1
+                    </p>
+                <table class="my-table-all my-centered my-card">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%;">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                
+                <p>
+                        Semester 2
+                    </p>
+                <table class="my-table-all my-centered my-card">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%; ">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                
+                <p>
+                        Semester 3
+                    </p>
+                <table class="my-table-all my-centered my-card">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%; ">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                
+                <p>
+                        Semester 4
+                    </p>
+                <table class="my-table-all my-centered my-card" id="test1">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%; ">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                
+                <p>
+                        Semester 5
+                    </p>
+                <table class="my-table-all my-centered my-card">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%; ">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                
+                <p>
+                        Semester 6
+                    </p>
+                    <table class="my-table-all my-centered my-card">
+                <thead >
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 1</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 2</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 3</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 4</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">Subject 5</th>
+                    <th class="my-text-white my-small" style="width:20%; background-color: #065f7a;">CGPA&nbsp;&nbsp;</th>
+                </thead>
+                <tbody>
+                   
+                          <tr class="my-white" style="border-width: 0px;">
+                                <td style="width:20%; ">76</td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                <td style="width:20%; "></td>
+                                
+                        </tr>
+                        
+                    
+                </tbody>
+                </table>
+                <p></p>
+                </div>    
         </div>
         </div>
      </div>
@@ -49,6 +251,7 @@ height: 100%;
      </div>
  
  
+     
     
  
 

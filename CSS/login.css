@@ -8,7 +8,7 @@
   }
   
   body{
-    background: linear-gradient(to right, #96cfe7, #065f7a);
+   background: linear-gradient(to left, #03553a, #03558a);
   }
   
   .box{
@@ -23,7 +23,7 @@
     height: auto;
     background: #fff;
     padding: 35px 50px;
-    border-radius: 2px;
+    border-radius: 10px;
   }
   
   .form .title{

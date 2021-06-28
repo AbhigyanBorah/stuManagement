@@ -19,10 +19,7 @@ height: 100%;
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  
 }
 
 button {
@@ -37,7 +34,7 @@ button {
 
 </style>
 </head>
-<body>
+<body style="background: linear-gradient(to left, #03553a, #03558a);">
     
 
 <div class="box">
@@ -50,12 +47,12 @@ button {
       <form method="post" action="login.php" onsubmit="return validation();">
 
         <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+      <input  class="my-input" type="text" placeholder="Enter Username" name="username" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
-
-      <button type="submit" name="submit">Login</button>
+      <input class="my-input" type="password" placeholder="Enter Password" name="password" required>
+      <br><br>
+      <button class="my-btn my-text-white" type="submit" name="submit" style="background: linear-gradient(to left, #03553a, #03558a);">Login</button>
       <label>
       </form>
     </div>
