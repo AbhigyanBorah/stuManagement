@@ -15,15 +15,6 @@ include "session.php"
 body{
     font-family: 'Montserrat', sans-serif;
 }
-input[type=text] {
-  
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 2px;
-  font-size: 17px;
-  border: 1px solid #ccc;
-}
 
 
 </style>
@@ -37,11 +28,11 @@ input[type=text] {
     <div class="my-content">
         <div class="my-container">
             <br><br><br><br>
-        <a href="addnotice.php" class="my-btn my-block my-padding my-text-white" style="width:20%;margin-right:5%; margin-bottom:10px; background-color: #065f7a; float:left;">ADD NEW STUDENT</a>
+        <a href="addDustudent.html" class="my-btn my-block my-padding my-text-white" style="width:20%;margin-right:5%; margin-bottom:10px; background-color: #065f7a; float:left;">ADD NEW STUDENT</a>
   
         <div class="my-container" style="float:right;">
      <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search"></input>
+        <input type="text" placeholder="Search.." name="search" class="my-input" style="float:left; width:60%;"></input>
       <button class="my-btn my-text-white" style="float:right;  margin-top: 8px;margin-right: 16px;font-size: 17px; background-color:#065f7a; " type="submit"><i class="fa fa-search my-large"></i></button>
      </form>
         </div>

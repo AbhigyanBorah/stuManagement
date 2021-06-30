@@ -19,7 +19,7 @@ height: 100%;
 </head>
 
 <body style="background: linear-gradient(to top, #aac6d3, rgb(255, 255, 255));">
-<div id="navbar">
+<div id="navbar" style="z-index:999">
 <button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button>
 </div>
 <br>
@@ -27,15 +27,15 @@ height: 100%;
 
     <div class="my-row-padding">
         <div class="my-quarter">
-            <div class="my-container my-white my-card" style="height:260px; width:260px;margin-left: 70px;">
-            <div class="my-card" style="margin-top: 20px;">
+            <div class="my-container my-white my-card" style="border-radius:10px; height:260px; width:260px;margin-left: 70px;">
+            <div style="margin-top: 20px;">
                 <img style="height:220px; width:220px;" src="img/22.jpg"></img>
             </div>
             </div>
-            <a href="addnotice.php" class="my-btn my-block my-padding my-text-white" style="width:260px; margin-left: 70px; margin-top:50px; background-color: #065f7a;">EDIT DETAILS</a>
+            <a href="addnotice.php" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:50px; background-color: #065f7a;">EDIT DETAILS</a>
         </div>
         <div class="my-quarter">
-            <div class="my-container my-white my-card" style="height:860px;"><br>
+            <div class="my-container my-white my-card" style="height:860px; border-radius:10px;"><br>
                 <div class="my-container">
                     <br>
                     <p>
@@ -72,7 +72,7 @@ height: 100%;
         </div>
         </div>
         <div class="my-half">
-            <div class="my-container my-white my-card" style="height:860px;">
+            <div class="my-container my-white my-card" style="height:860px; border-radius:10px;">
             <p class="my-center my-large">MARKS</p>
                 <div class="my-responsive">
                 <p>
@@ -252,7 +252,20 @@ height: 100%;
  
  
      
+     <script>
+    window.onscroll = function() {myFunction()};
     
+    var header = document.getElementById("navbar");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script> 
  
 
 </body>
