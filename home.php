@@ -78,7 +78,13 @@ include "session.php"
                 <div class="container">
                  <div class="my-card my-white" style="height: 400px; border-radius: 20px; text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay" style="border-radius: 20px;">
-                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> 0 <br><p><a href="dustudents.php"><button class="my-btn my-btn-hover">View</button></a></p> </div>
+                           <?php 
+                           include "connect.php";
+                            $str="select * from personal where board=1;";
+                            $result=mysqli_query($link,$str);
+                            $n=mysqli_num_rows($result);
+                          ?>
+                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> <?php echo $n ?> <br><p><a href="dustudents.php"><button class="my-btn my-btn-hover">View</button></a></p> </div>
                   </div>
                  <h2 style="padding-top: 120px; color: #0f2453"><i class="fa fa-mortar-board my-xxlarge"></i><br>Dibrugarh <br>University</h2>
                  </div>
@@ -89,7 +95,12 @@ include "session.php"
                 <div class="container">
                 <div class="my-card my-white" style="height: 400px;border-radius: 20px; text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay2" style="border-radius: 20px;">
-                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students  <br> 0 <br><p><a href="astu3students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
+                          <?php 
+                            $str="select * from personal where board=2;";
+                            $result=mysqli_query($link,$str);
+                            $n=mysqli_num_rows($result);
+                          ?>
+                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students  <br> <?php echo $n ?> <br><p><a href="astu3students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
                   </div>
                   <h2 style="padding-top: 120px;color: #0f2453"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (3 years course)</h2>
                   </div>
@@ -100,7 +111,12 @@ include "session.php"
                 <div class="container" >
                 <div class="my-card my-white" style="height: 400px;border-radius: 20px; text-align: center; background: linear-gradient(to bottom, #ffffff, #ebebeb);">
                   <div class="overlay3" style="border-radius: 20px;">
-                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> 0 <br><p><a href="astu2students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
+                         <?php 
+                            $str="select * from personal where board=2;";
+                            $result=mysqli_query($link,$str);
+                            $n=mysqli_num_rows($result);
+                          ?>
+                    <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br>  <?php echo $n ?> <br><p><a href="astu2students.php"><button class="my-btn my-btn-hover">View</button></a></p></div>
                    </div>
                   <h2 style="padding-top: 120px;color: #0f2453"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (2 years course)</h2>
                   </div>

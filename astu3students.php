@@ -35,7 +35,7 @@ input[type=text] {
     <div class="my-content">
         <div class="my-container">
             <br><br><br><br>
-        <a href="addnotice.php" class="my-btn my-block my-padding my-text-white" style="width:20%;margin-right:5%; margin-bottom:10px; background-color: #e95a5a; float:left;">ADD NEW STUDENT</a>
+        <a href="addASTU3.php" class="my-btn my-block my-padding my-text-white" style="width:20%;margin-right:5%; margin-bottom:10px; background-color: #e95a5a; float:left;">ADD NEW STUDENT</a>
   
         <div class="my-container" style="float:right;">
     <form action="/action_page.php">
@@ -58,7 +58,7 @@ input[type=text] {
                                 <td style="width:20%; text-align:center;"></td>
                                 <td style="width:20%; text-align:center;"></td>
                                 <td style="width:20%; text-align:center;"></td>
-                                <td style="width:20%; text-align:center;"> <a href="delnotices.php?id='.$row[0].'">More Details</a></td>
+                                <td style="width:20%; text-align:center;"> <a href="ASTU3details.html?id='.$row[0].'">More Details</a></td>
                                 
                         </tr>
                         

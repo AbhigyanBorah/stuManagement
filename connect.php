@@ -1,3 +1,3 @@
 <?php
-    $link=mysqli_connect("localhost", "root", "","studentmnagement") or die("Can't Connect To Database");
+    $link=mysqli_connect("localhost", "root", "","new") or die("Can't Connect To Database");
 ?> 

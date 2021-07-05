@@ -47,7 +47,7 @@ body{
       </p>
       <br>
       <p>
-        <input name="phone" type="text"  class="my-input my-animate-input" placeholder="Phone No." style="width:40%">
+      <input name="phone" type="text"  class="my-input my-animate-input" placeholder="Phone No." style="width:40%">
       </p>
       <br>
       <p>
@@ -81,7 +81,7 @@ body{
             
             
       <br>
-      <button name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit" style="width:40%;margin-left:20%; background-color: #065f7a;"><span class="my-opacity-off">Save</span>
+      <button name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit" style="width:40%;margin-left:20%; background-color: #e95a5a;"><span class="my-opacity-off">Save</span>
       </button><br>
       </div>
       </div>
