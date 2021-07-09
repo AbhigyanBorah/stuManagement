@@ -45,7 +45,7 @@ body{
 
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
-	<form class="my-container" method="post" action="savestu.php" id="form1">
+	<form class="my-container" method="post" action="savestu.php" id="form1" onsubmit="return validation();">
     	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453"><b> Enter Student Details</b></h1>
         <p>
             <div class="my-container my-border my-margin-left" style="width:200px;height:200px;">
@@ -59,27 +59,27 @@ body{
         <br>
         <p>
         <label class="my-margin-top my-left" > Roll No. &nbsp;</label>
-      <b><input name="roll" type="text"  class="my-input " placeholder="Roll No." style="width:75%" value=<?php echo $roll ?>></b>
+      <b><input name="roll" type="text"  class="my-input " placeholder="Roll No." style="width:75%" <?php echo 'value="'.$roll.'"'; ?>></b>
       </p>
       <br>
       <p>
       <label class="my-margin-top my-left" > Name &nbsp;</label>
-      <b><input name="name" type="text"  class="my-input " placeholder="Name" style="width:75%" value=<?php echo $name ?>></b>
+      <b><input name="name" type="text"  class="my-input " placeholder="Name" style="width:75%" <?php echo 'value="'.$name.'"'; ?>></b>
       </p>
       <br>
       <p>
       <label class="my-margin-top my-left" > Address &nbsp;</label>
-      <b><input name="address" type="text"  class="my-input " placeholder="Address" style="width:75%" value=<?php echo $address ?>></b>
+      <b><input name="address" type="text"  class="my-input " placeholder="Address" style="width:75%" <?php echo 'value="'.$address.'"'; ?>></b>
       </p>
       <br>
       <p>
       <label class="my-margin-top my-left" > Phone &nbsp;</label>
-      <b> <input name="phone" type="text"  class="my-input " placeholder="Phone No." style="width:75%" value=<?php echo $phn ?>></b>
+      <b> <input name="phone" type="text"  class="my-input " placeholder="Phone No." style="width:75%" <?php echo 'value="'.$phn.'"'; ?>></b>
       </p>
       <br>
       <p>
       <label class="my-margin-top my-left" > Batch &nbsp;</label>
-      <b><input name="batch" type="text"  class="my-input " placeholder="Batch" style="width:75%" value=<?php echo $batch ?>></b>
+      <b><input name="batch" type="text"  class="my-input " placeholder="Batch" style="width:75%"<?php echo 'value="'.$batch.'"'; ?>></b>
       </p>
       <br>
       
@@ -88,27 +88,27 @@ body{
           <br>
         <p>
         <label class="my-margin-top my-left" > Registration No. &nbsp;</label>
-        <b><input name="regno" type="text"  class="my-input " placeholder="Registration No." style="width:75%" value=<?php echo $reg ?>></b>
+        <b><input name="regno" type="text"  class="my-input " placeholder="Registration No." style="width:75%" <?php echo 'value="'.$reg.'"'; ?>></b>
             </p>
             <br>
             <p>
             <label class="my-margin-top my-left" > Email &nbsp;</label>
-            <b><input name="email" type="text"  class="my-input " placeholder="E-mail" style="width:75%" value=<?php echo $email ?>></b>
+            <b><input name="email" type="text"  class="my-input " placeholder="E-mail" style="width:75%" <?php echo 'value="'.$email.'"'; ?>></b>
             </p>
             <br>
             <p>
                 <label class="my-margin-top my-left" > Date of Birth &nbsp;</label>
-                <b><input name="dob" type="date"  class="my-input" value="Date of Birth" style="width:75%; color:rgb(122, 120, 120); " value=<?php echo $dob ?>></b>
+                <b><input name="dob" type="date"  class="my-input" value="Date of Birth" style="width:75%; color:rgb(122, 120, 120); " <?php echo 'value="'.$dob.'"'; ?>></b>
             </p>
             <br>
             <p>
             <label class="my-margin-top my-left" > Qualification &nbsp;</label>
-            <b> <input name="qualification" type="text"  class="my-input " placeholder="Qualification" style="width:75%" value=<?php echo $qualification ?>></b>
+            <b> <input name="qualification" type="text"  class="my-input " placeholder="Qualification" style="width:75%" <?php echo 'value="'.$qualification.'"'; ?>></b>
             </p>
             <br>
             <p>
             <label class="my-margin-top my-left" > Board &nbsp;</label>
-            <b><input name="board" type="text"  class="my-input " placeholder="Board" style="width:75%" value=<?php echo $board ?>></b>
+            <b><input name="board" type="text"  class="my-input " placeholder="Board" style="width:75%" <?php echo 'value="'.$board.'"'; ?>></b>
             </p>
             
             
