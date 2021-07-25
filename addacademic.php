@@ -94,10 +94,10 @@ body{
    </form>
    <br>
    <?php if(isset($_GET["sem"])){
-      echo '<div class="my-container" id="show" >';
+      echo '<div class="my-container" >';
    }
    else {
-   echo '<div class="my-container" id="show" hidden >';
+   echo '<div class="my-container" hidden >';
   } ?>
   
    <form method="post" action="savemarks.php" id="form2" class="my-content" onsubmit="return validation();">
