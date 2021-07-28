@@ -25,6 +25,19 @@ include "session.php"
    text-align: center;
    
 }
+.parallax {
+  /* The image used */
+  background-image: url('img/background.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .border-black{
     border-color:black!important;
     border-top:10px solid black!important;
@@ -45,7 +58,7 @@ include "session.php"
   }
 </style>
 </head>
-<body>
+<body class="parallax">
 
 
     <div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none" id="mySidebar">

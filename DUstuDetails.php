@@ -15,6 +15,20 @@ include "session.php"
     body, html {
 height: 100%;
 }
+.parallax {
+  /* The image used */
+  background-image: url('img/back2.png');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
 </style>
 </head>
 <?php
@@ -40,7 +54,7 @@ height: 100%;
     $board=$row2[0];
 
  ?>   
-<body>
+<body class="parallax">
 <div id="navbar" style="z-index:999">
 <button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button>
 </div>
