@@ -4,12 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
-<link rel="stylesheet" type="text/css" href="css/sticky.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Home</title>
 <style>
 body{
     font-family: 'Montserrat', sans-serif;
+}
+header{
+  position: sticky;
+  top:0;
+  z-index: 999;
+}
+.nav:hover{
+  color: red;
+  cursor: pointer;
 }
 
 
@@ -37,12 +45,29 @@ body{
     $board=$row2[0];
 
  ?> 
+ <script type="text/javascript">
+ function handleBackward(){
+   window.history.back();
+ }
+
+ function handleForward(){
+   window.history.forward();
+ }
+ </script>
 </head>
 <body>
-<div id="navbar" style="z-index:999;">
-<button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button>
-</div>
-
+    <header>
+<div class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;"></div>
+         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:-165px;">
+         <h2>JEC MCA STUDENT MANAGEMENT </h2>
+        
+        <div class="my-container">
+        <a class="my-padding" onclick="handleBackward()"><i class="fa fa-angle-double-left my-xxlarge nav"></i></a>
+        <a href="home.php" class="my-padding"><i class="fa fa-home my-xxlarge nav"></i></a>
+        <a  class="my-padding" onclick="handleForward()"><i class="fa fa-angle-double-right my-xxlarge nav"></i></a>
+      </div>
+      </div>
+</header>
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
 	<form class="my-container" method="post" action="update.php" id="form1" onsubmit="return validation();">
@@ -86,7 +111,7 @@ body{
       <div class="my-half">
           <br>
         <p>
-        <label class="my-margin-top my-left" > Registration No. &nbsp;</label>
+        <label class="my-margin-top my-left" > Registration No.</label>
         <b><input name="regno" type="text"  class="my-input " placeholder="Registration No." style="width:75%" <?php echo 'value="'.$reg.'"'; ?> disabled></b>
             </p>
             <br>
@@ -97,7 +122,7 @@ body{
             <br>
             <p>
                 <label class="my-margin-top my-left" > Date of Birth &nbsp;</label>
-                <b><input name="dob" type="date"  class="my-input" value="Date of Birth" style="width:75%; color:rgb(122, 120, 120); " <?php echo 'value="'.$dob.'"'; ?>></b>
+                <b><input name="dob" type="date"  class="my-input"  style="width:75%; color:rgb(122, 120, 120); " <?php echo 'value="'.$dob.'"'; ?>></b>
             </p>
             <br>
             <p>
@@ -122,20 +147,6 @@ body{
 
 
 
-<script>
-    window.onscroll = function() {myFunction()};
-    
-    var header = document.getElementById("navbar");
-    var sticky = header.offsetTop;
-    
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
-    </script>
 
 
 </body>

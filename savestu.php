@@ -2,6 +2,7 @@
 	include("connect.php");
 	if(isset($_POST["submit"]))
 	{
+		
         $roll=$_POST["roll"];
         $regno=$_POST["regno"];
 		$name=$_POST["name"];
@@ -12,17 +13,17 @@
 		$qualification=$_POST["qualification"];
 		$batch=$_POST["batch"];
         $board=$_POST["board"];
-        $photo=$_POST["file1"];
-				
-		$result=mysqli_query($link,"insert into personal values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$board','$photo')");
+
 		
-		if($result)
-		{
-			header("location:dustudents.php?ok=1");	
-		}
-		else
-		{
-			echo mysqli_error($link);	
-		}
+		$filename=$_FILES["image"]["name"];
+		$filetemp=$_FILES["image"]["tmp_name"];
+		$folder="images/".$filename;
+		move_uploaded_file($filetemp,$folder);
+		
+        
+				
+		$result=mysqli_query($link,"insert into personal values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$board','$folder')");
+		
+		
 	}
 ?>

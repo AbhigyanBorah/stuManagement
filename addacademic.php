@@ -108,16 +108,16 @@ body{
           <label>Marks obtained in <?php echo $row3[2]  ?> : </label>  
           <input class="inp" type="int" name="sub1" placeholder="Enter the Mark secured" required></p>
        <p>
-        <label for="sub2">Marks obtained in <?php echo $row3[2]  ?> : </label>
+        <label for="sub2">Marks obtained in <?php echo $row3[3]  ?> : </label>
         <input class="inp" type="int"name="sub2" placeholder="Enter the Mark secured"required></p>
         <p>
-        <label for="sub3">Marks obtained in <?php echo $row3[3]  ?> : </label>
+        <label for="sub3">Marks obtained in <?php echo $row3[4]  ?> : </label>
         <input class="inp" type="int"name="sub3" placeholder="Enter the Mark secured"required></p>
         <p>
-        <label for="sub4">Marks obtained in <?php echo $row3[4]  ?> : </label>
+        <label for="sub4">Marks obtained in <?php echo $row3[5]  ?> : </label>
         <input class="inp" type="int"name="sub4" placeholder="Enter the Mark secured" required></p>
         <p>
-        <label for="sub5">Marks obtained in <?php echo $row3[5]  ?> : </label>
+        <label for="sub5">Marks obtained in <?php echo $row3[6]  ?> : </label>
         <input class="inp" type="int"name="sub5" placeholder="Enter the Mark secured"required></p>
         <p>
           <br>

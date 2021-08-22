@@ -1,7 +1,10 @@
-.header {
-    background-color: #f1f1f1;
-    padding: 30px;
-    text-align: center;
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   }
   
   #navbar {
@@ -26,10 +29,8 @@
     padding: 16px;
   }
   
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+  header.sticky {
+    position: inherit;
   }
   
   .sticky + .content1 {

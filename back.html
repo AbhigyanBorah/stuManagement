@@ -22,9 +22,51 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .3;
+  opacity: 11;
 }
 
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.gradient{
+  content: '';
+  position: absolute;
+    width: 2500px;
+    height: 2500px;
+    border-radius: 50%;
+    background: linear-gradient(to left, #076A83,#b809b8);
+    top: -10%;
+    right: 68%;
+    opacity: .5;
+    
+}
+
+.gradient1{
+  content: '';
+  position: absolute;
+    width: 2500px;
+    height:2500px;
+    border-radius: 50%;
+    background: linear-gradient(to left, #076A83,#b809b8);
+    top: -10%;
+    left: 68%;
+    opacity: .4;
+    transform: translateY(-50%);
+}
+.my{
+  height: 100%; 
+  backdrop-filter: blur(5px);
+}
 </style>
 </head>
-<body><div class="parallax"></div></body></html>
+<body><div class="parallax">
+  <div class="container">
+    <div class="my">
+  <div class="gradient"></div><div class="gradient1"></div>
+  </div>
+  </div>
+</div>
+</body></html>

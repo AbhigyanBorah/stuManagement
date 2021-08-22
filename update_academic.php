@@ -42,6 +42,10 @@ body{
   $str2="Select * from subjects where bid='$brd' and semester='$sem'";
    $result2=mysqli_query($link,$str2);
    $row3=mysqli_fetch_array($result2); 
+
+   $str3="Select * from academic where bid='$brd' and semester='$sem' and roll='$roll'";
+   $result3=mysqli_query($link,$str3);
+   $row4=mysqli_fetch_array($result3); 
    
     }
 
@@ -111,19 +115,19 @@ body{
         <br>
         <p>
           <label>Marks obtained in <?php echo $row3[2]  ?> : </label>  
-          <input class="inp" type="int" name="sub1" placeholder="Enter the Mark secured" required></p>
+          <input class="inp" type="int" name="sub1" <?php echo 'value="'.$row4[3].'"'; ?> required></p>
        <p>
-        <label for="sub2">Marks obtained in <?php echo $row3[2]  ?> : </label>
-        <input class="inp" type="int"name="sub2" placeholder="Enter the Mark secured"required></p>
+        <label for="sub2">Marks obtained in <?php echo $row3[3]  ?> : </label>
+        <input class="inp" type="int"name="sub2" <?php echo 'value="'.$row4[4].'"'; ?> required></p>
         <p>
-        <label for="sub3">Marks obtained in <?php echo $row3[3]  ?> : </label>
-        <input class="inp" type="int"name="sub3" placeholder="Enter the Mark secured"required></p>
+        <label for="sub3">Marks obtained in <?php echo $row3[4]  ?> : </label>
+        <input class="inp" type="int"name="sub3" <?php echo 'value="'.$row4[5].'"'; ?> required></p>
         <p>
-        <label for="sub4">Marks obtained in <?php echo $row3[4]  ?> : </label>
-        <input class="inp" type="int"name="sub4" placeholder="Enter the Mark secured" required></p>
+        <label for="sub4">Marks obtained in <?php echo $row3[5]  ?> : </label>
+        <input class="inp" type="int"name="sub4" <?php echo 'value="'.$row4[6].'"'; ?> required></p>
         <p>
-        <label for="sub5">Marks obtained in <?php echo $row3[5]  ?> : </label>
-        <input class="inp" type="int"name="sub5" placeholder="Enter the Mark secured"required></p>
+        <label for="sub5">Marks obtained in <?php echo $row3[6]  ?> : </label>
+        <input class="inp" type="int"name="sub5" <?php echo 'value="'.$row4[7].'"'; ?> required></p>
         <p>
           <br>
           <p>
