@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Home</title>
+<title>Update Student Details</title>
 <style>
 body{
     font-family: 'Montserrat', sans-serif;
@@ -56,15 +56,16 @@ header{
  </script>
 </head>
 <body>
-    <header>
-<div class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;"></div>
-         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:-165px;">
+<header>
+<div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
+         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:10px;">
          <h2>JEC MCA STUDENT MANAGEMENT </h2>
         
         <div class="my-container">
         <a class="my-padding" onclick="handleBackward()"><i class="fa fa-angle-double-left my-xxlarge nav"></i></a>
         <a href="home.php" class="my-padding"><i class="fa fa-home my-xxlarge nav"></i></a>
         <a  class="my-padding" onclick="handleForward()"><i class="fa fa-angle-double-right my-xxlarge nav"></i></a>
+      </div>
       </div>
       </div>
 </header>

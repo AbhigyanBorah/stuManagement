@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/my.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Add Student</title>
+  <title>Add Students</title>
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -52,7 +52,7 @@
 
   <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
     <form class="my-container" method="post" action="savestu.php" id="form1" enctype="multipart/form-data">
-      <h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #770677; margin-top: 80px;"><b> Enter
+      <h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #137a06; margin-top: 80px;"><b> Enter
           Student Details</b></h1>
       <p>
       <div class="my-container my-border my-margin-left" style="width:200px;height:200px;"></div>
@@ -110,13 +110,13 @@
           <br>
           <p style="display:flex;">
           <label class="my-margin-top my-left" style="color:rgb(122, 120, 120)"> Board &nbsp;</label>
-            <input disabled name="board" type="text" class="my-input my-animate-input" value="Dibrugarh University" style="width:40%">
+            <input name="board" type="text" class="my-input my-animate-input" value="ASTU (2 years)" readonly style="width:40%">
           </p>
 
 
           <br>
           <button name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit"
-            style="width:40%;margin-left:20%; background-color: #770677;"><span class="my-opacity-off">Save</span>
+            style="width:40%;margin-left:20%; background-color: #137a06;"><span class="my-opacity-off">Save</span>
           </button><br>
         </div>
       </div>

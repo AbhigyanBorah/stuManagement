@@ -12,6 +12,7 @@ include "session.php"
 <link rel="stylesheet" type="text/css" href="css/sidenav.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <title>Home</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Varela+Round&display=swap');
@@ -71,18 +72,20 @@ img{
     <div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none;" id="mySidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="my_close()"><i class="fa fa-angle-double-left my-xxlarge"></i></a>
         <a href="admin.php" class="my-bar-item">Change Password</a>
-        <a href="admin.php" class="my-bar-item">Log Out</a>
+        <a href="logout.php" class="my-bar-item">Log Out</a>
     </div>
 
     <a href="javascript:void(0)" class="mya my-hide-small my-hide-medium" id="openNav" style="margin-top:40px;" onclick="my_open()"><i class="fa fa-angle-double-right my-xxxlarge"></i></a>
     <a href="javascript:void(0)" class="mya my-hide-large" id="openNav" style="margin-top:150px;" onclick="my_open()"><i class="fa fa-angle-double-right my-xxxlarge"></i></a>
     <div id="main">
+   
         <header>
-        <div class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;"></div>
+        <div class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
         <img src="img/logo1.png"/> 
-        <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:-165px;">
+        <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:10px;">
          <h2 style="font-family: 'Varela Round', sans-serif;">STUDENT MANAGEMENT<h2>
           <h1 style="font-size:55px; font-family: 'Varela Round', sans-serif;">JEC MCA</h1>
+        </div>
         </div>
         </header>
 

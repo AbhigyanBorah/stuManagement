@@ -110,6 +110,7 @@ include "session.php"
       </div>
       </div>
 </header>
+
     <div class="my-content" style="max-width:1600px; opacity: 0.97;">
 
         <div class="my-row-padding" style="margin-top:80px;">
@@ -120,9 +121,9 @@ include "session.php"
                     <?php echo "<img src='".$row["photo"]."' heigh='200' width='200'/>"; ?>
                     </div>
                 </div>
-                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:40px; background-color: #770677;">EDIT DETAILS</a>';?>
-                <?php echo'<a href="addacademic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color: #770677;">ADD ACADEMIC DETAILS</a>';?>
-                <?php echo'<a href="update_academic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color: #770677;">EDIT MARKS</a>';?>
+                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:40px; background-color:  #137a06;">EDIT DETAILS</a>';?>
+                <?php echo'<a href="addacademic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color:  #137a06;">ADD ACADEMIC DETAILS</a>';?>
+                <?php echo'<a href="update_academic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color:  #137a06;">EDIT MARKS</a>';?>
                 <br>
             </div>
             <div class="my-threequarter">
@@ -209,15 +210,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>
@@ -261,15 +262,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>
@@ -313,15 +314,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>
@@ -364,15 +365,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>
@@ -416,15 +417,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>
@@ -467,15 +468,15 @@ include "session.php"
                       while($row=mysqli_fetch_array($result))
                           {
                           
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color:  #137a06;">Status</th>';
                         }   
                         ?>
                     </thead>

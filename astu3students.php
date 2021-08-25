@@ -8,11 +8,17 @@ include "session.php"
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<title>ASTU 3 Years Students</title>
 <style>
 body{
     font-family: 'Montserrat', sans-serif;
+}
+.nav{
+    color:white;
 }
 .nav:hover{
   color: red;
@@ -35,9 +41,9 @@ header{
  </script>
 </head>
 <body>
-  <header>
-<div  class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;"></div>
-         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:-165px;">
+<header>
+<div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
+         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
          <h2>JEC MCA STUDENT MANAGEMENT </h2>
         
         <div class="my-container">
@@ -46,22 +52,16 @@ header{
         <a  class="my-padding" onclick="handleForward()"><i class="fa fa-angle-double-right my-xxlarge nav"></i></a>
       </div>
       </div>
+      </div>
 </header>
-
     <div class="my-content">
         <div class="my-container">
             <br><br><br><br>
-            <a href="addDustudent.html" class="my-btn my-block my-padding my-text-white" style="width:240px;margin-right:5%; margin-bottom:10px; background-color: #e95a5a; float:left;"><i class="fa fa-user-plus my-large"></i> &nbsp;  ADD NEW STUDENT &nbsp; </a>
+            <a href="addASTU3.php" class="my-btn my-block my-padding my-text-white" style="width:240px;margin-right:5%; text-decoration:none; margin-bottom:10px; background-color: #e95a5a; float:left;"><i class="fa fa-user-plus my-large"></i> &nbsp;  ADD NEW STUDENT &nbsp; </a>
   
-            <div class="my-container" style="float:right;">
-     <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search" class="my-input" style="float:left; width:60%;"></input>
-      <button class="my-btn my-text-white" style="float:right;  margin-top: 8px;margin-right: 16px;font-size: 17px; background-color:#e95a5a; " type="submit"><i class="fa fa-search my-large"></i></button>
-     </form>
-        </div>
-
+           
         <br><br><br>
-        <table class="my-table-all">
+        <table id="datatable" class="my-table-all">
                 <thead >
                     <th class="my-text-white" style="text-align:center;width:20%; background-color: #e95a5a;">Roll No.</th>
                     <th class="my-text-white" style="text-align:center;width:20%; background-color: #e95a5a;">Name</th>
@@ -80,7 +80,7 @@ header{
                                 echo'<td style="width:20%; text-align:center;">'.$row[0].'</td>';
                                 echo'<td style="width:20%; text-align:center;">'.$row[2].'</td>';
                                 echo'<td style="width:20%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:20%; text-align:center;"> <a href="ASTU3details.html?id='.$row[0].'">More Details</a></td>';
+                                echo'<td style="width:20%; text-align:center;" class="my-hover-text-red"> <a href="ASTU3details.php?id='.$row[0].'">More Details</a></td>';
                                 
                                 echo'</tr>';
                               }   
@@ -93,19 +93,14 @@ header{
 </div>
 
 
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
+
 <script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+$(document).ready(function() {
+    $('#datatable').DataTable();
+} );
 </script>
 
 

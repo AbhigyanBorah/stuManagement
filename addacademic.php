@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
-<link rel="stylesheet" type="text/css" href="css/sticky.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<title>Home</title>
+<title>Add Marks</title>
 <style>
 body{
     font-family: 'Montserrat', sans-serif;
@@ -16,7 +15,26 @@ body{
 .inp{
   padding:8px;border:none;border-bottom:1px solid #ccc;
 }
+header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav:hover {
+      color: red;
+      cursor: pointer;
+    }
 </style>
+<script type="text/javascript">
+    function handleBackward() {
+      window.history.back();
+    }
+
+    function handleForward() {
+      window.history.forward();
+    }
+  </script>
 <?php
 	include "connect.php";
 	$id=$_GET["id"];
@@ -47,14 +65,24 @@ body{
  ?>   
 </head>
 <body>
-<div id="navbar" style="z-index:999;">
-<button class="my-btn"><a href="home.php"><i class="fa fa-home my-xlarge"></i></a></button>
-</div>
+<header>
+<div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
+         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
+         <h2>JEC MCA STUDENT MANAGEMENT </h2>
+        
+        <div class="my-container">
+        <a class="my-padding" onclick="handleBackward()"><i class="fa fa-angle-double-left my-xxlarge nav"></i></a>
+        <a href="home.php" class="my-padding"><i class="fa fa-home my-xxlarge nav"></i></a>
+        <a  class="my-padding" onclick="handleForward()"><i class="fa fa-angle-double-right my-xxlarge nav"></i></a>
+      </div>
+      </div>
+      </div>
+</header>
 
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
 	<form class="my-container" method="get" action="addacademic.php" id="form1" onsubmit="return validation();">
-    	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453"><b> Add Academic Details</b></h1>
+    	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453;margin-top: 80px;"><b> Add Academic Details</b></h1>
         <hr style="width:60%; margin: 0 auto;  border-style: inset; border-width: .5px;" class="my-animate-zoom">
         <br>
         
