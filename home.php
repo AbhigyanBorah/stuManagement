@@ -42,14 +42,14 @@ include "session.php"
   }
  
   .glass{
-    opacity: 0.86;
+    opacity: 0.8;
   }
   header{
   position: sticky;
   top:0;
   z-index: 999;
 }
-img{
+.img1{
   position:absolute;
   top:4px;
   left:550px;
@@ -62,6 +62,15 @@ img{
   left:1150px;
   height:190px;
   width:190px;
+}
+.image{
+  position:absolute;
+    width:800px;
+    right:0;
+    bottom:0;
+    z-index:997;
+    margin-bottom:81px;
+    margin-right:50px;
 }
 
 </style>
@@ -81,7 +90,7 @@ img{
    
         <header>
         <div class="my-container my-card-4" style="height: 180px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
-        <img src="img/logo1.png"/> 
+        <img src="img/logo1.png" class="img1"> 
         <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232); margin-top:10px;">
          <h2 style="font-family: 'Varela Round', sans-serif;">STUDENT MANAGEMENT<h2>
           <h1 style="font-size:55px; font-family: 'Varela Round', sans-serif;">JEC MCA</h1>
@@ -89,14 +98,14 @@ img{
         </div>
         </header>
 
-            <br><br><br><br><br><br>
-            <div class="my-content">
-            <div class="my-row">
+            <br><br><br><br><br><br><br>
+            <div class="my-content" style="max-width:1450px;">
+            <div class="my-row-padding">
 
-              <div class="my-third my-container glass">
+              <div class="my-third glass">
                 <div class="container">
-                 <div class="my-card" style="height: 400px; border-radius: 20px; text-align: center;background: linear-gradient(to top, #03553a, #03558a); ">
-                  <div class="overlay" style="border-radius: 20px; ">
+                 <div class="my-card" style="height: 270px; border-radius: 10px; text-align: center;background: linear-gradient(to top, #03553a, #03558a); ">
+                  <div class="overlay" style="border-radius: 10px; ">
                            <?php 
                            include "connect.php";
                             $str="select * from personal where board=1;";
@@ -106,15 +115,15 @@ img{
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br> <?php echo $n ?> 
                     <br><p><a href="dustudents.php"><button class="my-btn my-hover-white my-round-xxlarge my-wide my-border my-border-white"> View </button></a></p> </div>
                   </div>
-                 <h2 style="padding-top: 120px; color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>DIBRUGARH <br>UNIVERSITY</h2>
+                 <h2 style="padding-top: 60px; color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>DIBRUGARH <br>UNIVERSITY</h2>
                  </div>
                </div>
                </div>
 
-               <div class="my-third my-container glass">
+               <div class="my-third glass">
                 <div class="container">
-                <div class="my-card" style="height: 400px;border-radius: 20px; text-align: center; background: linear-gradient(to top, #03553a, #03558a);">
-                  <div class="overlay2" style="border-radius: 20px;">
+                <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center; background: linear-gradient(to top, #03553a, #03558a);">
+                  <div class="overlay2" style="border-radius: 10px;">
                           <?php 
                             $str="select * from personal where board=2;";
                             $result=mysqli_query($link,$str);
@@ -123,15 +132,15 @@ img{
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students  <br> <?php echo $n ?> 
                     <br><p><a href="astu3students.php"><button class="my-btn my-hover-white my-round-xxlarge my-wide my-border my-border-white">View</button></a></p></div>
                   </div>
-                  <h2 style="padding-top: 120px;color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (3 YEARS COURSE)</h2>
+                  <h2 style="padding-top: 60px;color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (3 YEARS COURSE)</h2>
                   </div>
                </div>
                </div>
 
-               <div class="my-third my-container glass">
+               <div class="my-third glass">
                 <div class="container" >
-                <div class="my-card" style="height: 400px;border-radius: 20px; text-align: center;background: linear-gradient(to top, #03553a, #03558a);">
-                  <div class="overlay3" style="border-radius: 20px;">
+                <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center;background: linear-gradient(to top, #03553a, #03558a);">
+                  <div class="overlay3" style="border-radius: 10px;">
                          <?php 
                             $str="select * from personal where board=3;";
                             $result=mysqli_query($link,$str);
@@ -140,12 +149,18 @@ img{
                     <div class="text"><i class="fa fa-user my-xxlarge"></i><br>Total Students <br>  <?php echo $n ?> 
                     <br><p><a href="astu2students.php"><button class="my-btn my-hover-white my-round-xxlarge my-wide my-border my-border-white">View</button></a></p></div>
                    </div>
-                  <h2 style="padding-top: 120px;color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (2 YEARS COURSE)</h2>
+                  <h2 style="padding-top: 60px;color:#fff"><i class="fa fa-mortar-board my-xxlarge"></i><br>ASTU<br> (2 YEARS COURSE)</h2>
                   </div>
                </div>
                </div>
 
              </div>
+
+
+<div class="my-container my-hide-small">
+  <img src="img/home.svg" class="image">
+</div> 
+
 
           </div>
           <div class="footer my-card-4">
@@ -157,7 +172,7 @@ img{
       </div>
 
 
-				
+      
 
 
 

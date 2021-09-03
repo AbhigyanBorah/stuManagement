@@ -10,12 +10,13 @@
 		$m3=$_POST["sub3"];
 		$m4=$_POST["sub4"];
 		$m5=$_POST["sub5"];
+		$m6=$_POST["sub6"];
 		$cgpa=$_POST["cgpa"];
         $status=$_POST["status"];
         
         $total=$m1+$m2+$m3+$m4+$m5;
 				
-		$result=mysqli_query($link,"insert into academic values('$roll','$sem','$bid','$m1','$m2','$m3','$m4','$m5','$total','$cgpa','$status')");
+		$result=mysqli_query($link,"insert into academic values('$roll','$sem','$bid','$m1','$m2','$m3','$m4','$m5','$m6','$total','$cgpa','$status')");
 		
 		if($result)
 		{

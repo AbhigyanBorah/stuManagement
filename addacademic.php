@@ -1,3 +1,7 @@
+<?php
+
+include "session.php"
+?>
 <!doctype html>
 <html>
 <head>
@@ -68,7 +72,7 @@ header {
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
-         <h2>JEC MCA STUDENT MANAGEMENT </h2>
+         <h2>J EC MCA STUDENT MANAGEMENT </h2>
         
         <div class="my-container">
         <a class="my-padding" onclick="handleBackward()"><i class="fa fa-angle-double-left my-xxlarge nav"></i></a>
@@ -148,9 +152,12 @@ header {
         <label for="sub5">Marks obtained in <?php echo $row3[6]  ?> : </label>
         <input class="inp" type="int"name="sub5" placeholder="Enter the Mark secured"required></p>
         <p>
+        <label for="sub6">Marks obtained in <?php echo $row3[7]  ?> : </label>
+        <input class="inp" type="int"name="sub6" placeholder="Enter the Mark secured"required></p>
+        <p>
           <br>
           <p>
-        <label for="sub5">CGPA Obtained : </label>
+        <label for="sub5">SGPA Obtained : </label>
         <input class="inp" type="int"name="cgpa" placeholder="Enter the Mark secured"required></p>
         <p>
         <p>
@@ -166,7 +173,7 @@ header {
 
         <button type="submit" name="submit" class="my-btn my-right" style="color:white; background: linear-gradient(to left, #03553a, #03558a); width:200px;">Upload &nbsp;&nbsp; <i class="fa fa-angle-double-top my-large"></i></button>
         </p>
-        </center
+  </center>
    </form>
   </div>
 </div>

@@ -1,3 +1,7 @@
+<?php
+
+include "session.php"
+?>
 <!doctype html>
 <html>
 <head>
@@ -72,19 +76,17 @@ header{
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
 	<form class="my-container" method="post" action="update.php" id="form1" onsubmit="return validation();">
-    	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453"><b> Enter Student Details</b></h1>
+    	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453"><b> Update Student Details</b></h1>
         <p>
             <div class="my-container my-border my-margin-left" style="width:200px;height:200px;"></div>
             <div class="my-padding" style="float:left; margin-left:230px; margin-top:-130px;">
-            <label class="my-margin-top my-left" style="color:rgb(122, 120, 120);" > Photo: </label>
-      <input class="my-input" type="file" name="file1" style="width:250px; color:rgb(122, 120, 120);"></div>
+            </div>
         </p><br>
         <div class="my-row-padding">
             <div class="my-half">
-        <br>
         <p>
         <label class="my-margin-top my-left" > Roll No. &nbsp;</label>
-      <b><input name="roll" type="text"  class="my-input " placeholder="Roll No." style="width:75%" <?php echo 'value="'.$roll.'"'; ?> disabled></b>
+      <b><input name="roll" type="text"  class="my-input " placeholder="Roll No." style="width:75%" <?php echo 'value="'.$roll.'"'; ?> readonly></b>
       </p>
       <br>
       <p>
@@ -110,10 +112,9 @@ header{
       
       </div>
       <div class="my-half">
-          <br>
         <p>
         <label class="my-margin-top my-left" > Registration No.</label>
-        <b><input name="regno" type="text"  class="my-input " placeholder="Registration No." style="width:75%" <?php echo 'value="'.$reg.'"'; ?> disabled></b>
+        <b><input name="regno" type="text"  class="my-input " placeholder="Registration No." style="width:75%" <?php echo 'value="'.$reg.'"'; ?> readonly></b>
             </p>
             <br>
             <p>
@@ -133,7 +134,7 @@ header{
             <br>
             <p>
             <label class="my-margin-top my-left" > Board &nbsp;</label>
-            <b><input name="board" type="text"  class="my-input " placeholder="Board" style="width:75%" <?php echo 'value="'.$board.'"'; ?> disabled></b>
+            <b><input name="board" type="text"  class="my-input " placeholder="Board" style="width:75%" <?php echo 'value="'.$board.'"'; ?> readonly></b>
             </p>
             
             

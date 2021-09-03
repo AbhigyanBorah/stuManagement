@@ -16,7 +16,7 @@ include "session.php"
         body,
         html {
             height: 100%;
-            font-family: 'Varela Round', sans-serif;
+            
         }
 
         .parallax {
@@ -49,7 +49,7 @@ include "session.php"
             display: flex;
             justify-content: space-evenly;
             max-width: 1000px;
-            font-size:20px;
+            font-size:18px;
             font-family: 'Klee One', cursive;
         }
         h1{
@@ -110,23 +110,22 @@ include "session.php"
       </div>
       </div>
 </header>
-    <div class="my-content" style="max-width:1600px; opacity: 0.97;">
 
-        <div class="my-row-padding" style="margin-top:80px;">
+    <div class="my-content" style="max-width:1200px; opacity: 0.97;">
+    
+    <div class="my-container my-card" style="margin-top:30px;">
+        <div class="my-row-padding" style="margin-top:30px;">
             <div class="my-quarter">
-                <div class="my-container my-white my-card"
-                    style="border-radius:10px; height:260px; width:260px;margin-left: 70px;">
-                    <div style="margin-top: 20px;">
-                    <?php echo "<img src='".$row["photo"]."' heigh='200' width='200'/>"; ?>
-                    </div>
+                <div class="my-white" style="border-radius:10px; height:260px; width:260px;">
+                   <?php echo "<img src='".$row["photo"]."' style='height:260px;width:260px;object-fit: fill;border-radius:10px;'>";?>
                 </div>
-                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:40px; background-color: #770677;">EDIT DETAILS</a>';?>
-                <?php echo'<a href="addacademic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color: #770677;">ADD ACADEMIC DETAILS</a>';?>
-                <?php echo'<a href="update_academic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:10px; width:260px; margin-left: 70px; margin-top:20px; background-color: #770677;">EDIT MARKS</a>';?>
+                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px; margin-top:40px; background-color: #770677;">EDIT DETAILS</a>';?>
+                <?php echo'<a href="addacademic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px;  margin-top:20px; background-color: #770677;">ADD ACADEMIC DETAILS</a>';?>
+                <?php echo'<a href="update_academic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px;  margin-top:20px; background-color: #770677;">EDIT MARKS</a>';?>
                 <br>
             </div>
             <div class="my-threequarter">
-                <div class="my-container my-white my-card" style="height:460px; border-radius:10px;"><br>
+                <div class="my-container my-white" style="height:460px; border-radius:5px;"><br>
 
                     <center>
                     <p>
@@ -194,8 +193,8 @@ include "session.php"
             </div>
         </div>
 
-        <div class="my-container my-white my-card" style="border-radius:10px; margin-top:20px;">
-            <p class="my-center my-large">M A R K S</p>
+        <div class="my-container my-white" style="border-radius:5px; margin-top:20px;">
+            <p class="my-center my-xlarge">M   A   R   K   S</p>
             <div class="my-responsive">
                 <p>
                     Semester 1
@@ -216,7 +215,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -268,7 +267,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -320,7 +319,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -371,7 +370,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -423,7 +422,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -474,7 +473,7 @@ include "session.php"
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">CGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
                             echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
                         }   
                         ?>
@@ -512,7 +511,17 @@ include "session.php"
 
     </div>
     <br>
+</div>
 
+<?php
+  if(isset($_GET["ok"]))
+  {
+    $x=$_GET["ok"];
+    if($x==1){
+    echo '<script> alert("Student Details Updated"); </script>';
+    }
+  }
+?>
 
 </body>
 

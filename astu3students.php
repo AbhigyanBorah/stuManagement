@@ -29,6 +29,16 @@ header{
   top:0;
   z-index: 999;
 }
+
+.image{
+  position:absolute;
+    width:400px;
+    left:0;
+    bottom:0;
+    z-index:997;
+    margin-bottom:81px;
+    margin-left:50px;
+}
 </style>
 <script type="text/javascript">
  function handleBackward(){
@@ -92,6 +102,9 @@ header{
     </div>
 </div>
 
+<div class="my-container my-hide-small">
+  <img src="img/astu3Details.svg" class="image">
+</div> 
 
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
@@ -102,7 +115,18 @@ $(document).ready(function() {
     $('#datatable').DataTable();
 } );
 </script>
-
+<?php
+  if(isset($_GET["ok"]))
+  {
+    $x=$_GET["ok"];
+    if($x==1){
+    echo '<script> alert("Student Added"); </script>';
+    }
+    elseif($x=="up3"){
+      echo '<script> alert("Student Details Updated"); </script>';
+    }
+  }
+?>
 
 </body>
 </html>

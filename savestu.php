@@ -29,10 +29,24 @@
 		$folder="images/".$filename;
 		move_uploaded_file($filetemp,$folder);
 		
-    echo $board;
-	echo $brd;
-				
-		$result=mysqli_query($link,"insert into personal values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder')");
+   		$result=mysqli_query($link,"insert into personal values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder')");
+
+		   if($result)
+		{	
+			if($brd==1){
+			header("location:dustudents.php?ok=1");
+			}
+			elseif($brd==2){
+				header("location:astu3students.php?ok=1");
+			}
+			elseif($brd==3){
+				header("location:astu2students.php?ok=1");
+			}	
+		}
+		else
+		{
+			echo mysqli_error($link);	
+		}
 		
 		
 	}

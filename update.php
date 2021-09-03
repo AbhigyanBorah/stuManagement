@@ -12,7 +12,18 @@
 		$qualification=$_POST["qualification"];
 		$batch=$_POST["batch"];
         $board=$_POST["board"];
-        $photo=$_POST["file1"];
+		$brd=0;
+		if($board=="Dibrugarh University"){
+			$brd=1;
+		}
+		elseif($board=="ASTU (3 years)"){
+			$brd=2;
+		}
+		elseif($board=="ASTU (2 years)"){
+			$brd=3;
+		}
+
+        
 
 		$str1="Select bid from boards where bname='$board'";
     $result1=mysqli_query($link,$str1);
@@ -23,7 +34,15 @@
 		
 		if($result)
 		{
-			header("location:dustudents.php?ok=1");	
+			if($brd==1){
+				header("location:dustudents.php?ok=up1");
+				}
+				elseif($brd==2){
+					header("location:astu3students.php?ok=up3");
+				}
+				elseif($brd==3){
+					header("location:astu2students.php?ok=up2");
+				}	
 		}
 		else
 		{

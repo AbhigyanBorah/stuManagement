@@ -1,3 +1,7 @@
+<?php
+
+include "session.php"
+?>
 <!doctype html>
 <html>
 
@@ -110,7 +114,7 @@
           <br>
           <p style="display:flex;">
           <label class="my-margin-top my-left" style="color:rgb(122, 120, 120)"> Board &nbsp;</label>
-            <input disabled name="board" type="text" class="my-input my-animate-input" value="Dibrugarh University" style="width:40%">
+            <input readonly name="board" type="text" class="my-input my-animate-input" value="Dibrugarh University" style="width:40%">
           </p>
 
 
