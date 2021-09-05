@@ -6,7 +6,8 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/my.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Login</title>
 <style>
 body{
@@ -21,7 +22,7 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   
 }
-
+/* 
 button {
   background-color: #036875;
   color: white;
@@ -30,8 +31,17 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
-}
+} */
 
+/* .image{
+  position:absolute;
+    width:600px;
+    top:30%;
+    left:45%;
+    z-index:997;
+    margin-bottom:81px;
+    margin-right:50px;
+} */
 
 
 
@@ -40,14 +50,14 @@ button {
 <body style="background: linear-gradient(to left, #03553a, #03558a);">
     
 
-<div class="box">
+<!-- <div class="box" ">
     <div class="my-card-4">
     <div class="form">
       <div class="title">
         Login To JEC MCA<br>
         Student Management
       </div>
-      <form method="post" action="login.php" onsubmit="return validation();">
+      <form method="post" style="z-index:999;" action="login.php" onsubmit="return validation(); ">
 
         <label><b>Username</b></label>
       <input  class="my-input" type="text" placeholder="Enter Username" name="username" required>
@@ -60,7 +70,54 @@ button {
       </form>
     </div>
   </div>
-  </div>
+  </div> -->
+   
+
+
+
+
+
+
+
+
+
+  <div class="container">
+            <div class="forms-container">
+                <div class="signin-signup">
+                <form method="post" class="sign-in-form" action="login.php" onsubmit="return validation(); autocomplete="off">
+                        <h2 class="title">Login To JEC MCA<br>
+        Student Management</h2>
+                        <div class="input-feild" style="display:flex;">
+                            
+                        <i class="fa fa-user"></i><input  type="text" placeholder="Username" name="username" required autocomplete="off">
+                        </div>
+                        <div class="input-feild" style="display:flex;">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" placeholder="Password" name="password" required>
+                         </div>
+                         
+                         <button class="my-btn btn solid" type="submit" name="submit" >Login</button>
+                                                  
+                         </div>
+                    </form>
+                    <div class="my-white bar"></div>
+                    <img src="img/login.svg" class="image">
+                    <p class="para">
+                      Are you a student ? <a href="stulogin.php">Login here</a>
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
   
 
 
@@ -69,11 +126,7 @@ button {
   {
     $x=$_GET["log"];
     if($x==1){
-    echo '<script> alert("Wrong Password"); </script>';
-  }
-  if($x==0){
-  
-    echo '<script> alert("Admin Not Found"); </script>';
+    echo '<script> alert("Wrong Username or Password"); </script>';
   }
 }
   
