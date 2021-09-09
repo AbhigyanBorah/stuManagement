@@ -85,7 +85,7 @@ header{
 
                     <?php
                       include "connect.php";
-                      $sql="select * from personal where board=1;";
+                      $sql="select * from students where board=1;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {

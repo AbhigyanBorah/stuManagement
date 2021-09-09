@@ -108,7 +108,7 @@ include "session.php"
                   <div class="overlay" style="border-radius: 10px; ">
                            <?php 
                            include "connect.php";
-                            $str="select * from personal where board=1;";
+                            $str="select * from students where board=1;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>
@@ -125,7 +125,7 @@ include "session.php"
                 <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center; background: linear-gradient(to top, #03553a, #03558a);">
                   <div class="overlay2" style="border-radius: 10px;">
                           <?php 
-                            $str="select * from personal where board=2;";
+                            $str="select * from students where board=2;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>
@@ -142,7 +142,7 @@ include "session.php"
                 <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center;background: linear-gradient(to top, #03553a, #03558a);">
                   <div class="overlay3" style="border-radius: 10px;">
                          <?php 
-                            $str="select * from personal where board=3;";
+                            $str="select * from students where board=3;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>

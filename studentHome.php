@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
 <link rel="stylesheet" type="text/css" href="css/stustyle.css">
+<link rel="stylesheet" type="text/css" href="css/sidenav.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Home</title>
@@ -66,7 +68,7 @@
 
 </style>
 </head>
-<body class="parallax">
+<body class="parallax" style="user-select:none;">
 
 <?php include "connect.php"; 
 $roll=$_GET["roll"]; 
@@ -76,6 +78,15 @@ $name=$row["name"];
 
 ?>
 
+<div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none;" id="mySidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="my_close()"><i class="fa fa-angle-double-left my-xxlarge"></i></a>
+        <a href="logout.php" class="my-bar-item">Log Out</a>
+    </div>
+
+    <a href="javascript:void(0)" class="mya my-hide-small my-hide-medium" id="openNav" style="margin-top:40px;" onclick="my_open()"><i class="fa fa-angle-double-right my-xxxlarge"></i></a>
+    <a href="javascript:void(0)" class="mya my-hide-large" id="openNav" style="margin-top:150px;" onclick="my_open()"><i class="fa fa-angle-double-right my-xxxlarge"></i></a>
+    <div id="main">
+   
 
     
    
@@ -98,24 +109,26 @@ $name=$row["name"];
 
               <div class="my-half glass">
                 <div class="container">
+                 <?php echo'<a href="stuDetails.php?id='.$roll.'" style="text-decoration:none">';?>
                  <div class="my-card" style="height: 170px; border-radius: 10px; text-align: center;background: linear-gradient(to top, #03553a, #03558a); ">
                  <div class="overlay" style="border-radius: 10px; ">
     <div class="text"><h2>View Your<br>Personal Details</h2></div>
   </div>
                  <h2 style="padding-top: 35px; color:#fff">View Your<br>Personal Details</h2>
                  </div>
-               </div>
+               </div></a>
                </div>
 
                <div class="my-half glass">
                 <div class="container">
+                <?php echo'<a href="stuAcademic.php?id='.$roll.'" style="text-decoration:none">';?>
                 <div class="my-card" style="height: 170px;border-radius: 10px; text-align: center; background: linear-gradient(to top, #03553a, #03558a);">
                 <div class="overlay2" style="border-radius: 10px; ">
     <div class="text"><h2>View Your<br>Academic Details<h2></div>
   </div>
                   <h2 style="padding-top: 35px;color:#fff">View Your<br>Academic Details</h2>
                   </div>
-               </div>
+               </div></a>
                </div>
 
                
@@ -140,7 +153,7 @@ $name=$row["name"];
 
 
       
-
+</div>
 
 
       
@@ -153,6 +166,23 @@ $name=$row["name"];
 		speed: 20
 	});
 </script>
+
+<script>
+            function my_open() {
+              document.getElementById("main").style.marginLeft = "10%";
+              document.getElementById("mySidebar").style.width = "12%";
+              document.getElementById("mySidebar").style.display = "block";
+              document.getElementById("mySidebar1").style.width = "12%";
+              document.getElementById("mySidebar1").style.display = "block";
+              document.getElementById("openNav").style.display = 'none';
+            }
+            function my_close() {
+              document.getElementById("main").style.marginLeft = "0%";
+              document.getElementById("mySidebar").style.display = "none";
+              document.getElementById("mySidebar1").style.display = "none";
+              document.getElementById("openNav").style.display = "inline-block";
+            }
+        </script>
 
 </body>
 </html>

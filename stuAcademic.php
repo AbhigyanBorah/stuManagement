@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 
@@ -10,7 +7,7 @@ include "session.php"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/my.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Student Details</title>
+    <title>Academic Details</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Varela+Round&display=swap');
         body,
@@ -18,7 +15,9 @@ include "session.php"
             height: 100%;
             
         }
-
+        hr{ border: .5px solid black;
+        max-width:800px; margin: 0 auto;
+        }
         .parallax {
             /* The image used */
             background-image: url('img/back2.png');
@@ -48,7 +47,7 @@ include "session.php"
         .details {
             display: flex;
             justify-content: space-evenly;
-            max-width: 1000px;
+            max-width: 500px;
             font-size:18px;
             font-family: 'Klee One', cursive;
         }
@@ -81,12 +80,7 @@ include "session.php"
     $roll=$row["roll"];
 	$reg=$row["regno"];
 	$name=$row["name"];
-	$address=$row["address"];
-	$phn=$row["phone"];
-	$email=$row["email"];
-	$dob=$row["dob"];
-    $qualification=$row["qualification"];
-    $batch=$row["batch"];
+	
     $brd=$row["board"];
 
     $str1="Select bname from boards where bid='$brd'";
@@ -104,7 +98,7 @@ include "session.php"
         
         <div class="my-container">
         <a class="my-padding" onclick="handleBackward()"><i class="fa fa-angle-double-left my-xxlarge nav"></i></a>
-        <a href="home.php" class="my-padding"><i class="fa fa-home my-xxlarge nav"></i></a>
+        <?php echo'<a href="studentHome.php?roll='.$id.'" class="my-padding"><i class="fa fa-home my-xxlarge nav"></i></a>';?>
         <a  class="my-padding" onclick="handleForward()"><i class="fa fa-angle-double-right my-xxlarge nav"></i></a>
       </div>
       </div>
@@ -114,25 +108,14 @@ include "session.php"
     <div class="my-content" style="max-width:1200px; opacity: 0.97;">
     
     <div class="my-container my-card" style="margin-top:30px;">
-        <div class="my-row-padding" style="margin-top:30px;">
-            <div class="my-quarter">
-                <div class="my-white" style="border-radius:10px; height:260px; width:260px;">
-                   <?php echo "<img src='".$row["photo"]."' style='height:260px;width:260px;object-fit: fill;border-radius:10px;'>";?>
-                </div>
-                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px; margin-top:40px; background-color: #770677;">EDIT DETAILS</a>';?>
-                <?php echo'<a href="addacademic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px;  margin-top:20px; background-color: #770677;">ADD ACADEMIC DETAILS</a>';?>
-                <?php echo'<a href="update_academic.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px;  margin-top:20px; background-color: #770677;">EDIT MARKS</a>';?>
-                <br>
-            </div>
-            <div class="my-threequarter">
-                <div class="my-container my-white" style="height:460px; border-radius:5px;"><br>
+        <div class="my-container my-white" style="border-radius:5px; margin-top:20px;">
 
-                    <center>
+        <center><br><br>
                     <p>
                     <h1><b>
                             <?php echo $name ?>
                         </b></h1>
-                    </p> <br>
+                    </p>
                     <div class="my-container details">
                         <p>
                             Roll No.: <b>
@@ -144,56 +127,11 @@ include "session.php"
                                 <?php echo $reg ?>
                             </b>
                         </p> <br>
+                        
+</center>
+<br>
 
-                        <p>
-                            Address: <b>
-                                <?php echo $address ?>
-                            </b>
-                        </p> <br>
-                    </div>
-                    <div class="my-container details">
-                        <p>
-                            Phone No.: <b>
-                                <?php echo $phn ?>
-                            </b>
-                        </p> <br>
-
-
-                        <p>
-                            E-mail: <b>
-                                <?php echo $email ?>
-                            </b>
-                        </p><br>
-                        <p>
-                            Date Of birth: <b>
-                                <?php echo $dob ?>
-                            </b>
-                        </p> <br>
-                    </div>
-                    <div class="my-container details">
-                        <p>
-                            Qualification: <b>
-                                <?php echo $qualification ?>
-                            </b>
-                        </p> <br>
-                        <p>
-                            Batch: <b>
-                                <?php echo $batch ?>
-                            </b>
-                        </p><br>
-                        <p>
-                            Board: <b>
-                                <?php echo $board ?>
-                            </b>
-                        </p><br>
-                
-                    </div>
-                    </center>
-                </div>
-            </div>
-        </div>
-
-        <div class="my-container my-white" style="border-radius:5px; margin-top:20px;">
+<hr class="my-animate-zoom">
             <p class="my-center my-xlarge">M   A   R   K   S</p>
             <div class="my-responsive">
                 <p>
@@ -201,32 +139,43 @@ include "session.php"
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                                                  
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
-                           
-                       
+                        <?php
+                      include "connect.php";
+                      $sql="select * from subjects where bid='$brd' and semester=1;";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                          
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                        }   
+                        ?>
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academics where roll='$id' and sem=1;";
+                      $sql="select * from academic where roll='$id' and semester=1;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-medium" style="border-width: 0px;">';
-                                echo'<td style="">'.$row[3].'</td>';
-                                echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                echo'<td style="">'.$row[5].'</td>';
-                                echo'<td style="">'.$row[6].'</td>';
-                                echo'<td style="">'.$row[7].'</td>';
-                                echo'<td style="">'.$row[8].'</td>';
-                                
+                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[3].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
                                
                                 
                         echo'</tr>';
@@ -242,32 +191,43 @@ include "session.php"
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                                                  
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
-                           
-                       
+                        <?php
+                      include "connect.php";
+                      $sql="select * from subjects where bid='$brd' and semester=2;";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                          
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                        }   
+                        ?>
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academics where roll='$id' and sem=2;";
+                      $sql="select * from academic where roll='$id' and semester=2;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white" style="border-width: 0px;">';
-                                echo'<td style="">'.$row[3].'</td>';
-                                echo'<td style="text-align:left">'.$row[4].'</td>';
-                                echo'<td style="">'.$row[5].'</td>';
-                                echo'<td style="">'.$row[6].'</td>';
-                                echo'<td style="">'.$row[7].'</td>';
-                                echo'<td style="">'.$row[8].'</td>';
-                                
+                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
+                                echo'<td style="width:11.11%; text-align:center; height:70px;">'.$row[3].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
                                
                                 
                         echo'</tr>';
@@ -283,38 +243,48 @@ include "session.php"
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                                                  
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
-                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
-                           
-                       
+                        <?php
+                      include "connect.php";
+                      $sql="select * from subjects where bid='$brd' and semester=3;";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                          
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
+                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
+                        }   
+                        ?>
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academics where roll='$id' and sem=3;";
+                      $sql="select * from academic where roll='$id' and semester=3;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-medium" style="border-width: 0px;">';
-                                echo'<td style="">'.$row[3].'</td>';
-                                echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                echo'<td style="">'.$row[5].'</td>';
-                                echo'<td style="">'.$row[6].'</td>';
-                                echo'<td style="">'.$row[7].'</td>';
-                                echo'<td style="">'.$row[8].'</td>';
-                                
+                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
+                                echo'<td style="width:11.11%; text-align:center; height:70px;">'.$row[3].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
+                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
                                
                                 
                         echo'</tr>';
                           }   
                       ?>
-
 
                     </tbody>
                 </table>
@@ -476,7 +446,7 @@ include "session.php"
                 <p></p>
             </div>
         </div>
-
+<br>
     </div>
     <br>
 </div>
