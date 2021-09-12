@@ -46,7 +46,7 @@ header {
 <?php
 	include "connect.php";
 	$id=$_GET["id"];
-	$str="Select * from personal where roll='$id'";
+	$str="Select * from students where roll='$id'";
 	$result=mysqli_query($link,$str);
 	$row=mysqli_fetch_array($result);
     $roll=$row["roll"];
@@ -66,9 +66,9 @@ header {
    $result2=mysqli_query($link,$str2);
    $row3=mysqli_fetch_array($result2); 
 
-   $str3="Select * from academic where bid='$brd' and semester='$sem' and roll='$roll'";
+   /* $str3="Select * from academic where bid='$brd' and semester='$sem' and roll='$roll'";
    $result3=mysqli_query($link,$str3);
-   $row4=mysqli_fetch_array($result3); 
+   $row4=mysqli_fetch_array($result3);  */
    
     }
 
@@ -95,7 +95,7 @@ header {
 
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
-	<form class="my-container" method="get" action="update_academic.php" id="form1" onsubmit="return validation();">
+	<form class="my-container" method="post" action="updateMarks.php" id="form1" onsubmit="return validation();">
     	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453;margin-top: 80px;"><b> Update Academic Details</b></h1>
         <hr style="width:60%; margin: 0 auto;  border-style: inset; border-width: .5px;" class="my-animate-zoom">
         <br>
@@ -121,7 +121,7 @@ header {
                                                 echo '<option value="" disabled selected>Select Semester</option>';
                                                 } ?> 
                                                   <?php
-                                                    $rec=mysqli_query($link,"Select semester from subjects where bid='$brd'");
+                                                    $rec=mysqli_query($link,"Select distinct semester from subjects where bid='$brd'");
                                                     while($r=mysqli_fetch_array($rec))
                                                     {
                                                       echo '<option style="color:black;">'.$r[0].'</option>';	
@@ -133,7 +133,7 @@ header {
                     <p>
                     <button type="submit" name="submit" class="my-btn" style="color:white; background: linear-gradient(to left, #03553a, #03558a); width:200px;" id="proceed">Proceed &nbsp;&nbsp; <i class="fa fa-angle-double-right my-large"></i></button>
                     </p>   
-   </form>
+   <!-- </form>
    <br>
    <?php if(isset($_GET["sem"])){
       echo '<div class="my-container" id="show" >';
@@ -181,7 +181,7 @@ header {
         <button type="submit" name="submit" class="my-btn my-right" style="color:white; background: linear-gradient(to left, #03553a, #03558a); width:200px;">Upload &nbsp;&nbsp; <i class="fa fa-angle-double-top my-large"></i></button>
         </p>
   </center>
-   </form>
+   </form> -->
   </div>
 </div>
 

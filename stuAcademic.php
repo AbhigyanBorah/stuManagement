@@ -139,43 +139,53 @@
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=1;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=1;";
+                      $sql="select * from academics where roll='$id' and sem=1;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                          echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                                echo'<td style="">'.$row[3].'</td>';
+                                echo'<td style="text-align:left;">'.$row[4].'</td>';
+                                if($row["percentage"]<35){
+                                    echo'<td style="color:red">'.$row[5].'</td>';
+                                
+                                }
+                                else{
+                                echo'<td style="">'.$row[5].'</td>';
+                                }
+                                if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[6].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[6].'</td>';
+                                }
+                                if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[8].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[8].'</td>';
+                                }
+                                if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[9].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[9].'</td>';
+                                }
+                                
                                
                                 
                         echo'</tr>';
@@ -191,43 +201,53 @@
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=2;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=2;";
+                      $sql="select * from academics where roll='$id' and sem=2;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center; height:70px;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                                
                                
                                 
                         echo'</tr>';
@@ -243,48 +263,59 @@
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=3;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=3;";
+                      $sql="select * from academics where roll='$id' and sem=3;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center; height:70px;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                                
                                
                                 
                         echo'</tr>';
                           }   
                       ?>
+
 
                     </tbody>
                 </table>
@@ -292,45 +323,54 @@
                 <p>
                     Semester 4
                 </p>
-                <table class="my-table-all my-centered my-card" id="test1">
+                <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=4;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=4;";
+                      $sql="select * from academics where roll='$id' and sem=4;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center;height:70px;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
                                
                                 
                         echo'</tr>';
@@ -346,48 +386,59 @@
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=5;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=5;";
+                      $sql="select * from academics where roll='$id' and sem=5;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center;height:70px;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                                
                                
                                 
                         echo'</tr>';
                           }   
                       ?>
+
 
                     </tbody>
                 </table>
@@ -397,43 +448,53 @@
                 </p>
                 <table class="my-table-all my-centered my-card">
                     <thead>
-                        <?php
-                      include "connect.php";
-                      $sql="select * from subjects where bid='$brd' and semester=6;";
-                      $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                          {
-                          
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[2].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[3].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[4].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[5].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[6].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">'.$row[7].'</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Total</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">SGPA</th>';
-                            echo'<th class="my-text-white my-small" style="width:11.11%; background-color: #770677;">Status</th>';
-                        }   
-                        ?>
+                                                  
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                           
+                       
                     </thead>
                     <tbody>
 
                         <?php
                       include "connect.php";
-                      $sql="select * from academic where roll='$id' and semester=6;";
+                      $sql="select * from academics where roll='$id' and sem=6;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white my-large" style="border-width: 0px;">';
-                                echo'<td style="width:11.11%; text-align:center;height:70px;vertical-align:center;">'.$row[3].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:11.11%; text-align:center;">'.$row[11].'</td>';
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["percentage"]<35){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["percentage"]<35){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                                
                                
                                 
                         echo'</tr>';

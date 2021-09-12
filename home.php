@@ -80,7 +80,7 @@ include "session.php"
 
     <div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none;" id="mySidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="my_close()"><i class="fa fa-angle-double-left my-xxlarge"></i></a>
-        <a href="admin.php" class="my-bar-item">Change Password</a>
+        <a href="changepwd.php" class="my-bar-item">Change Password</a>
         <a href="logout.php" class="my-bar-item">Log Out</a>
     </div>
 
@@ -164,7 +164,7 @@ include "session.php"
 
           </div>
           <div class="footer my-card-4">
-              <p>Footer</p>
+              <p>&#169 J.E.C. MCA 2021, Developed by .....</p>
           </div>
 
 

@@ -23,18 +23,21 @@
 			$brd=3;
 		}
 
-        
+        $student=$_POST["student"];
 
 		$str1="Select bid from boards where bname='$board'";
     $result1=mysqli_query($link,$str1);
 	$row2=mysqli_fetch_array($result1);
     $bid=$row2[0];
 				
-		$result=mysqli_query($link,"UPDATE personal SET regno='$regno', name='$name',email='$email',address='$add',dob='$dob',phone='$phone',qualification='$qualification',batch='$batch',board='$bid' WHERE roll=$roll ");
+		$result=mysqli_query($link,"UPDATE students SET  name='$name',email='$email',address='$add',dob='$dob',phone='$phone',qualification='$qualification' WHERE roll=$roll ");
 		
 		if($result)
 		{
-			if($brd==1){
+			if($student==1){
+				header("location:stuDetails.php?ok=done&id=$roll");
+			}
+			elseif($brd==1){
 				header("location:dustudents.php?ok=up1");
 				}
 				elseif($brd==2){
@@ -42,7 +45,8 @@
 				}
 				elseif($brd==3){
 					header("location:astu2students.php?ok=up2");
-				}	
+				}
+				
 		}
 		else
 		{

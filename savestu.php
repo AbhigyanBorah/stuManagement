@@ -29,7 +29,7 @@
 		$folder="images/".$filename;
 		move_uploaded_file($filetemp,$folder);
 		
-   		$result=mysqli_query($link,"insert into personal values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder')");
+   		$result=mysqli_query($link,"insert into students values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder')");
 
 		   if($result)
 		{	

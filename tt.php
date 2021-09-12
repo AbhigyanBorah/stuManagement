@@ -9,13 +9,14 @@
 		$sname=$_POST["sname"];
 		$internal=$_POST["internal"];
 		$final=$_POST["final"];
+        $count=$_POST["count"];
 		
         $total=$internal+$final;
         $grade; 
         $status;
         $percentage=($total/100)*100;
 
-        echo $percentage;
+        
         if($percentage<35){
             $grade="F";
         }
@@ -40,7 +41,7 @@
         elseif($percentage>=90){
             $grade="O";
         }
-        echo $grade;
+        
 
         if($grade=="F"){
             $status="Fail";
@@ -48,7 +49,7 @@
         else{
             $status="Pass";
         }
-        echo $status;
+       
 
        
 
@@ -67,11 +68,12 @@
         echo $bid;
         echo '<br>'; */
 				
-		$result=mysqli_query($link,"insert into academics values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$grade','$status')");
+		$result=mysqli_query($link,"insert into academics values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$status','$percentage')");
 		
 		if($result)
 		{
-			header("location:addmarks.php?id=$roll&sem=$sem");	
+            $count=$count+1;
+			header("location:addmarks.php?id=$roll&sem=$sem&scode=$scode&count=$count");	
 		}
 		else
 		{

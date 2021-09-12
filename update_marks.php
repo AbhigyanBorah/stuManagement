@@ -5,21 +5,65 @@
         $roll=$_POST["roll"];
         $sem=$_POST["sem"];
 		$bid=$_POST["bid"];
-        $m1=$_POST["sub1"];
-		$m2=$_POST["sub2"];
-		$m3=$_POST["sub3"];
-		$m4=$_POST["sub4"];
-		$m5=$_POST["sub5"];
-		$cgpa=$_POST["cgpa"];
-        $status=$_POST["status"];
+        $scode=$_POST["scode"];
+		$sname=$_POST["sname"];
+		$internal=$_POST["internal"];
+		$final=$_POST["final"];
+		
+        $total=$internal+$final;
+        $grade; 
+        $status;
+        $percentage=($total/100)*100;
+
         
-        $total=$m1+$m2+$m3+$m4+$m5;
+        if($percentage<35){
+            $grade="F";
+        }
+        elseif($percentage>=35 && $percentage<=44){
+            $grade="P";
+        }
+        elseif($percentage>=45 && $percentage<=49){
+            $grade="C";
+        }
+        elseif($percentage>=50 && $percentage<=59){
+            $grade="B";
+        }
+        elseif($percentage>=60 && $percentage<=69){
+            $grade="B+";
+        }
+        elseif($percentage>=70 && $percentage<=79){
+            $grade="A";
+        }
+        elseif($percentage>=80 && $percentage<=89){
+            $grade="A+";
+        }
+        elseif($percentage>=90){
+            $grade="O";
+        }
+        
+
+        if($grade=="F"){
+            $status="Fail";
+        }
+        else{
+            $status="Pass";
+        }
+        
+        
 				
-		$result=mysqli_query($link,"UPDATE academic SET bid='$bid',sub1marks='$m1',sub2marks='$m2',sub3marks='$m3',sub4marks='$m4',sub5marks='$m5',total='$total',cgpa='$cgpa',status='$status' WHERE semester=$sem");
+		$result=mysqli_query($link,"UPDATE academics SET internal='$internal', final='$final', grade='$grade', status='$status' WHERE sem=$sem and roll='$roll' and bid='$bid' and subCode='$scode'");
 		
 		if($result)
 		{
-			header("location:DUstuDetails.php?id=$roll");	
+			if($bid==1){
+                header("location:DUstuDetails.php?ok=update&id=$roll");
+                }
+                elseif($bid==2){
+                    header("location:ASTU3details.php?ok=update&id=$roll");
+                }
+                elseif($bid==3){
+                    header("location:ASTU2Details.php?ok=update&id=$roll");
+                }		
 		}
 		else
 		{

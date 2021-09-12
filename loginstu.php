@@ -6,7 +6,7 @@ if(isset($_POST["submit"]))
 {
 	$roll=$_POST["roll"];
     	
-	$sql="select roll from personal where roll=$roll";
+	$sql="select roll from students where roll=$roll";
 	$result=mysqli_query($link,$sql);
 	$n=mysqli_num_rows($result);
 	if($n==1){

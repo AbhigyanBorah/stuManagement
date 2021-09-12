@@ -73,16 +73,7 @@ header {
     $sem=$_GET["sem"];
   }
   
-  if(isset($_GET["scode"]))
-  {
-   $scode=$_GET["scode"];
-   $count2=$_GET["count"];
-  }
-  if(isset($_POST["submit"]))
-  {
-  $count2=0;
-  }
-  $n=1;  
+     
 
   /* $str2="Select distinct subName from subjects where bid='$brd' and semester='$sem'";
    $result2=mysqli_query($link,$str2);
@@ -145,37 +136,25 @@ header {
                                  <tbody>
                                  <?php
                       include "connect.php";
-                      $sql="Select subCode,subName from subjects where bid='$brd' and semester='$sem'";;
+                      $sql="Select * from academics where bid='$brd' and sem='$sem' and roll='$roll'";
                       $result=mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
+                      
+                      while($row=mysqli_fetch_row($result))
                           {
+
                            
-                           echo'<form method="post" action="tt.php">';
+                           echo'<form method="post" action="update_marks.php">';
                           echo'<tr class="my-white" style="border-width: 0px;">';
-                                echo'<td>'.$row[0].'</td>';
-                                echo'<td>'.$row[1].'</td>';
-                                if($n==$count2)
-                                {
-                                  
-                                  $sql="select * from academics where roll='$id' and sem=1 and subCode='$scode';";
-                                  $resultN=mysqli_query($link,$sql);
-                                  $row1=mysqli_fetch_array($resultN);
-                                echo'<td><input type="text" name="internal" class="my-input" value="'.$row1[5].'"></input></td>';
-                                echo'<td><input type="text" name="final" class="my-input" value="'.$row1[6].'"></input></td>';
-                                $n=$n+1;
-                                }
-                                else{
-                                  echo'<td><input type="text" name="internal" class="my-input"></input></td>';
-                                  echo'<td><input type="text" name="final" class="my-input"></input></td>';
-                                }
-                                
-                                echo'<td ><input type="hidden"  name="scode" class="my-input" value="'.$row[0].'"></input></td>';
-                                echo'<td><input type="hidden"  name="sname"  class="my-input" value="'.$row[1].'"></input></td>';
+                                echo'<td>'.$row[3].'</td>';
+                                echo'<td>'.$row[4].'</td>';
+                                echo'<td><input type="text" name="internal" class="my-input my-center" value="'.$row[5].'"></input></td>';
+                                echo'<td><input type="text" name="final" class="my-input my-center" value="'.$row[6].'"></input></td>';
+                                echo'<td ><input type="hidden"  name="scode" class="my-input" value="'.$row[3].'"></input></td>';
+                                echo'<td><input type="hidden"  name="sname"  class="my-input" value="'.$row[4].'"></input></td>';
                                 echo'<td ><input type="hidden"  name="roll" class="my-input" value="'.$roll.'"></input></td>';
                                 echo'<td><input type="hidden"  name="sem"  class="my-input" value="'.$sem.'"></input></td>';
                                 echo'<td><input type="hidden"  name="bid"  class="my-input" value="'.$brd.'"></input></td>';
-                                echo'<td><input type="hidden"  name="bid"  class="my-input" value="'.$count2.'"></input></td>';
-                                echo'<td> <button type="submit" name="submit" class="my-hover-indigo my-btn my-blue" id="save" onclick="save(); this.disabled=true;">SAVE</td>
+                                echo'<td> <button type="submit" name="submit" class="my-hover-indigo my-btn my-blue">SAVE</td>
                                 ';
                                 
                                 echo '<p id="msg"></p>';
@@ -189,27 +168,7 @@ header {
                             </table>
 
                         </div>
-
-<div class="my-container my-margin-top">
-                        <?php
-                      include "connect.php";
-                      
-                          {
-                           echo'<form method="post" action="totalmarks.php">';
-                          echo'<tr class="my-white" style="border-width: 0px;">';
-                                
-                               
-                                echo'<td ><input type="hidden"  name="roll" class="my-input" value="'.$roll.'"></input></td>';
-                                echo'<td><input type="hidden"  name="sem"  class="my-input" value="'.$sem.'"></input></td>';
-                                echo'<td><input type="hidden"  name="bid"  class="my-input" value="'.$brd.'"></input></td>';
-                                echo'<td> <button type="submit" name="submit" class="my-hover-indigo my-btn my-blue">Save Total</td>';
-                                
-                        echo'</tr>';
                         
-                        echo'</form>';
-                          }   
-                      ?> 
-                        </div>
            
    <br>
   
@@ -227,17 +186,7 @@ header {
 
 
 </body>
-<script>
 
-function save(){
-
-  var msg = document.getElementById('msg');
-  document.getElementById("save").value="Saved Successfully";
-  msg.innerHTML ='';
-}
-
-
-  </script>
 
   
 </html>

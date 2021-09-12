@@ -72,7 +72,7 @@
 
 <?php include "connect.php"; 
 $roll=$_GET["roll"]; 
-$result=mysqli_query($link,"select * from personal where roll=$roll;");
+$result=mysqli_query($link,"select * from students where roll=$roll;");
 $row=mysqli_fetch_array($result);
 $name=$row["name"];
 
@@ -144,7 +144,7 @@ $name=$row["name"];
 
           </div>
           <div class="footer my-card-4">
-              <p>Footer</p>
+          <p>&#169 J.E.C. MCA 2021, Developed by .....</p>
           </div>
 
 

@@ -83,7 +83,7 @@ header {
                 <tbody>
                 <?php
                       include "connect.php";
-                      $sql="select * from personal where board=3;";
+                      $sql="select * from students where board=3;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {

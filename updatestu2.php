@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -47,7 +44,7 @@ header{
     $result1=mysqli_query($link,$str1);
 	$row2=mysqli_fetch_array($result1);
     $board=$row2[0];
-
+    $student=1;
  ?> 
  <script type="text/javascript">
  function handleBackward(){
@@ -135,6 +132,7 @@ header{
             </p>
             <br>
             <p>
+            <input name="student" type="hidden"  class="my-input " placeholder="Degree" style="width:75%" <?php echo 'value="'.$student.'"'; ?>>
             <label class="my-margin-top my-left" > Board &nbsp;</label>
             <b><input name="board" type="text"  class="my-input " placeholder="Board" style="width:75%" <?php echo 'value="'.$board.'"'; ?> readonly></b>
             </p>

@@ -59,8 +59,8 @@ include "session.php"
       <h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #e95a5a; margin-top: 80px;"><b> Enter
           Student Details</b></h1>
       <p>
-      <div class="my-container my-border my-margin-left" style="width:200px;height:200px;"></div>
-      <div class="my-padding" style="float:left; margin-left:230px; margin-top:-130px;">
+      
+      <div class="my-padding" style="float:left;margin-top:0px;">
         <label class="my-margin-top my-left" style="color:rgb(122, 120, 120);"> Photo: </label>
         <input class="my-input" type="file" name="image" id="image" value="" style="width:250px; color:rgb(122, 120, 120);">
        </div>
@@ -85,7 +85,17 @@ include "session.php"
           </p>
           <br>
           <p>
-            <input name="batch" type="text" class="my-input my-animate-input" placeholder="Batch" style="width:40%">
+          <label class="" style=""> Batch &nbsp;</label>
+            <select class="my-select my-animate" style="width:40%" name="batch">
+<?php
+    for ($i=2014; $i<=2036; $i++)
+    {
+        ?>
+            <option value="<?php echo $i;?>"><?php echo $i;?></option>
+        <?php
+    }
+?>
+</select>
           </p>
           <br>
 
@@ -108,8 +118,7 @@ include "session.php"
           </p>
           <br>
           <p>
-            <input name="qualification" type="text" class="my-input my-animate-input" placeholder="Qualification"
-              style="width:40%">
+          <input name="qualification" type="text" class="my-input my-animate-input" placeholder="Degree" style="width:40%">
           </p>
           <br>
           <p style="display:flex;">

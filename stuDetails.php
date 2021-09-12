@@ -117,7 +117,7 @@
                    <?php echo "<img src='".$row["photo"]."' style='height:260px;width:260px;object-fit: fill;border-radius:10px;'>";?>
                 </div>
                 <br><br><br><br><br>
-                <?php echo'<a href="updatestu.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px; margin-top:40px; background-color: #770677;">EDIT YOUR DETAILS</a>';?>
+                <?php echo'<a href="updatestu2.php?id='.$id.'" class="my-btn my-block my-padding my-text-white" style="border-radius:5px; width:260px; margin-top:40px; background-color: #770677;">EDIT YOUR DETAILS</a>';?>
                 
                 <br>
                 
@@ -202,7 +202,7 @@
   if(isset($_GET["ok"]))
   {
     $x=$_GET["ok"];
-    if($x==1){
+    if($x=="done"){
     echo '<script> alert("Student Details Updated"); </script>';
     }
   }
