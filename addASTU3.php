@@ -128,7 +128,7 @@ include "session.php"
 
 
           <br>
-          <button name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit"
+          <button name="submit" onclick="myfunction()" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit"
             style="width:40%;margin-left:20%; background-color: #e95a5a;"><span class="my-opacity-off">Save</span>
           </button><br>
         </div>
@@ -140,6 +140,19 @@ include "session.php"
 
 
 
+  <?php
+echo '<script>
+  function myfunction() {
+  
+  if (confirm("Are you sure you want to save this data?")) {
+    document.getElementById("form1").action = "savestu.php";
+  } else {
+    document.getElementById("form1").action = "addASTU3.php";
+  }
+  
+}
+
+</script>';?>
 
 
 

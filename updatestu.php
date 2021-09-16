@@ -141,7 +141,7 @@ header{
             
             
       <br>
-      <button name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit" style="width:40%;margin-left:20%; margin-top:13px; background: linear-gradient(to left, #03553a, #03558a);"><span class="my-opacity-off">Update</span>
+      <button name="submit" onclick="myfunction()" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit" style="width:40%;margin-left:20%; margin-top:13px; background: linear-gradient(to left, #03553a, #03558a);"><span class="my-opacity-off">Update</span>
       </button><br>
       </div>
       </div>
@@ -149,7 +149,19 @@ header{
     </form>
 </div>
 
+<?php
+echo '<script>
+  function myfunction() {
+  
+  if (confirm("Are you sure you want to update this data?")) {
+    document.getElementById("form1").action = "update.php?id='.$id.'";
+  } else {
+    document.getElementById("form1").action = "updatestu.php?id='.$id.'";
+  }
+  
+}
 
+</script>';?>
 
 
 
