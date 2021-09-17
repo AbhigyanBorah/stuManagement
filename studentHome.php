@@ -31,7 +31,7 @@
   background-repeat: no-repeat;background-size: cover;
  }
   .mya {
-    padding: 8px 8px 8px 32px;text-decoration: none;font-size: 25px;
+    padding: 120px 20px 20px 50px;text-decoration: none;font-size: 25px;
     color: #03553a ;display: block;transition: 0.3s;position: absolute;
   }
   

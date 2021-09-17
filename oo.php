@@ -3,17 +3,8 @@
 	if(isset($_POST["submit"]))
 	{
         $n=$_POST["n"];
-         
-       
-		
-        
-       
-
-       
-
-
         for($i=1;$i<=$n;$i++)
-        {
+     {
             $scode=$_POST[$i."scode"];
             $sname=$_POST[$i."sname"];
             $internal=$_POST[$i."internal"];
@@ -28,7 +19,7 @@
         $percentage=($total/100)*100;
 
         
-        if($percentage<35){
+        if($internal<11 || $final<30){
             $grade="F";
         }
         elseif($percentage>=35 && $percentage<=44){
@@ -56,18 +47,31 @@
 
         if($grade=="F"){
             $status="Fail";
+            $back="Pending";
         }
         else{
             $status="Pass";
         }
-        				
+        		
+        if($grade=="F"){
+            $result1=mysqli_query($link,"insert into back values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$back','$percentage')"); 
+        } 
+        
+
 		$result=mysqli_query($link,"insert into academics values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$status','$percentage')");
-        }
+     }
 		if($result)
 		{
-            $count=$count+1;
-			header("location:addmarks.php?id=$roll&sem=$sem&scode=$scode&count=$count");	
-		}
+			if($bid==1){
+                header("location:DUstuDetails.php?ok=save&id=$roll");
+                }
+                elseif($bid==2){
+                    header("location:ASTU3details.php?ok=save&id=$roll");
+                }
+                elseif($bid==3){
+                    header("location:ASTU2Details.php?ok=save&id=$roll");
+                }
+            }		
 		else
 		{
 			echo mysqli_error($link);	
