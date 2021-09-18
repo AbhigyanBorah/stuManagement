@@ -47,7 +47,7 @@ button {
 
 </style>
 </head>
-<body style="background: linear-gradient(to left, #03553a, #03558a);">
+<body style="background: linear-gradient(to left, #03553a, #03558a);" style="user-select:none;">
     
 
 <!-- <div class="box" ">

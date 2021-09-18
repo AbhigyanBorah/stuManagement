@@ -14,6 +14,8 @@
 		$batch=$_POST["batch"];
         $board=$_POST["board"];
 		$brd=0;
+		$status='';
+		$pin=rand(100000,999999);
 		if($board=="Dibrugarh University"){
 			$brd=1;
 		}
@@ -29,7 +31,7 @@
 		$folder="images/".$filename;
 		move_uploaded_file($filetemp,$folder);
 		
-   		$result=mysqli_query($link,"insert into students values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder')");
+   		$result=mysqli_query($link,"insert into students values('$roll','$regno','$name','$email','$add','$dob','$phone','$qualification','$batch','$brd','$folder','$status',$pin)");
 
 		   if($result)
 		{	

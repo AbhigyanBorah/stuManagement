@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -96,7 +93,7 @@ header {
 
  ?>   
 </head>
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -167,8 +164,8 @@ header {
                         } 
                         echo '</select></td>'; 
    
-                         echo'<td><input type="text" name="'.$i."internal".'" class="my-input"></input></td>';
-                         echo'<td><input type="text" name="'.$i."final".'" class="my-input"></input></td>';
+                         echo'<td><input type="number" min="0" max="30" name="'.$i."internal".'" class="my-input"></input></td>';
+                         echo'<td><input type="number" min="0" max="70" name="'.$i."final".'" class="my-input"></input></td>';
                          echo'<td><input type="hidden" name="roll" value="'.$roll.'" class="my-input"></input></td>';
                          echo'<td><input type="hidden" name="sem" value="'.$sem.'" class="my-input"></input></td>';
                          echo'<td><input type="hidden" name="brd" value="'.$brd.'" class="my-input"></input></td>';

@@ -16,7 +16,8 @@
         $percentage=($total/100)*100;
 
         
-        if($percentage<35){
+       
+        if($internal<11 || $final<30){
             $grade="F";
         }
         elseif($percentage>=35 && $percentage<=44){
@@ -44,13 +45,16 @@
 
         if($grade=="F"){
             $status="Fail";
+            $back="Pending";
         }
         else{
             $status="Pass";
         }
-        
-        
-				
+        if($grade=="F"){
+            $result1=mysqli_query($link,"insert into back values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$back','$percentage')"); 
+        } 
+        $result=mysqli_query($link,"UPDATE STUDENTS SET status = '' where roll = '$roll' ");
+		$result=mysqli_query($link,"insert into edited values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$status','$percentage')");		
 		$result=mysqli_query($link,"UPDATE academics SET internal='$internal', final='$final', grade='$grade', status='$status' WHERE sem=$sem and roll='$roll' and bid='$bid' and subCode='$scode'");
 		
 		if($result)

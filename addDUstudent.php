@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 
@@ -10,7 +7,116 @@ include "session.php"
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/my.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="js/jquery.validate.js" type="text/javascript"></script>
   <title>Add Student</title>
+
+
+
+  <script>
+
+$(document).ready(function() {
+     $("#form1").validate({
+        rules: {
+          image: {
+            required:true,
+          },
+          roll: {
+            required:true,
+            digits:true,
+            minlength: 4,
+            maxlength: 4
+          },
+          name: {
+            required: true,
+            
+            
+          },
+          regno: {
+            required: true,
+            digits:true,
+            
+          },
+          address: {
+            required: true,
+          },
+          phone: {
+            required: true,
+            digits:true,
+            minlength: 10,
+            maxlength: 10
+          },
+          regno: {
+            required: true,
+            digits:true,
+          },
+          
+          email: {
+            required: true,
+            email: true,
+          },
+          dob: {
+            required: true,
+           
+          },
+          qualification: {
+            required: true,
+            
+          },
+        },
+        messages: {
+          image: {
+            required: "Choose a file"
+          },
+          roll: {
+            required: "Enter a 4 digit roll number"
+          },
+          name: {
+            required: "Enter name",	
+            
+          },
+          address: {
+            required: "Enter address",
+              
+          },
+          phone: {
+            required: "Enter 10 digit phone number",
+              
+          },
+          regno: {
+            required: "Enter registration number",
+              
+          },
+          
+          email: {
+            required: "Enter email",
+              
+          },
+          dob: {
+            required: "Enter dob",
+              
+          },
+          qualification:{
+            required:"Enter degree",
+          },
+        }
+    });
+      });
+</script>
+<style>
+	a:link{
+		text-decoration:none;
+	}
+	label.error{
+		   color:#F00;
+	   }
+</style>
+
+
+
+
+
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -38,7 +144,7 @@ include "session.php"
   </script>
 </head>
 
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -73,7 +179,7 @@ include "session.php"
           </p>
           <br>
           <p>
-            <input name="name" type="text" class="my-input my-animate-input" placeholder="Name" style="width:40%">
+            <input onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="name" type="text" class="my-input my-animate-input" placeholder="Name" style="width:40%">
           </p>
           <br>
           <p>
@@ -119,7 +225,7 @@ include "session.php"
           </p>
           <br>
           <p>
-            <input name="qualification" type="text" class="my-input my-animate-input" placeholder="Degree" style="width:40%">
+            <input onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="qualification" type="text" class="my-input my-animate-input" placeholder="Degree" style="width:40%">
           </p>
           <br>
           <p style="display:flex;">
@@ -129,7 +235,7 @@ include "session.php"
 
 
           <br>
-          <button name="submit" onclick="myfunction()" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit"
+          <button onclick="myfunction()" name="submit" class="my-btn my-block my-margin-bottom my-right my-text-white my-padding" type="submit"
             style="width:40%;margin-left:20%; background-color: #770677;"><span class="my-opacity-off">Save</span>
           </button><br>
         </div>
@@ -143,16 +249,15 @@ include "session.php"
 echo '<script>
   function myfunction() {
   
-  if (confirm("Are you sure you want to save this data?")) {
+  if (confirm("Are you sure?")) {
     document.getElementById("form1").action = "savestu.php";
   } else {
-    document.getElementById("form1").action = "addDUstudent.php";
+    document.getElementById("form1").action = "addASTU2.php";
   }
   
 }
 
 </script>';?>
-
 
 
 

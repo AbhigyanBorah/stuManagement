@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -9,7 +6,89 @@ include "session.php"
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/my.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="js/jquery.validate.js" type="text/javascript"></script>
 <title>Update Student Details</title>
+
+
+
+<script>
+
+$(document).ready(function() {
+     $("#form1").validate({
+        rules: {
+          
+          name: {
+            required: true,
+          },
+          address: {
+            required: true,
+          },
+          phone: {
+            required: true,
+            digits:true,
+            minlength: 10,
+            maxlength: 10
+          },
+          email: {
+            required: true,
+            email: true,
+          },
+          dob: {
+            required: true,
+           
+          },
+          qualification: {
+            required: true,
+            
+          },
+        },
+        messages: {
+          image: {
+            required: "Choose a file"
+          },
+          name: {
+            required: "Enter name",	
+            
+          },
+          address: {
+            required: "Enter address",
+              
+          },
+          phone: {
+            required: "Enter 10 digit phone number",
+              
+          },
+          
+          
+          email: {
+            required: "Enter email",
+              
+          },
+          dob: {
+            required: "Enter dob",
+              
+          },
+          qualification:{
+            required:"Enter degree",
+          },
+        }
+    });
+      });
+</script>
+<style>
+	a:link{
+		text-decoration:none;
+	}
+	label.error{
+		   color:#F00;
+	   }
+</style>
+
+
+
+
+
 <style>
 body{
     font-family: 'Montserrat', sans-serif;
@@ -59,7 +138,7 @@ header{
  }
  </script>
 </head>
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:10px;">
@@ -75,7 +154,7 @@ header{
 </header>
 
 <div class="my-content my-white my-card" style="max-width:1000px; opacity:0.95;">
-	<form class="my-container" method="post" action="update.php" id="form1" onsubmit="return validation();">
+	<form class="my-container" method="post"  id="form1" onsubmit="return validation();">
     	<h1 style="font-family: 'Montserrat', sans-serif; text-align:center; color: #0f2453"><b> Update Student Details</b></h1>
         <p>
             <div class="container my-border my-margin-left" style="width:200px;height:200px;border-radius:10px;">
@@ -93,7 +172,7 @@ header{
       <br>
       <p>
       <label class="my-margin-top my-left" > Name &nbsp;</label>
-      <b><input name="name" type="text"  class="my-input " placeholder="Name" style="width:75%" <?php echo 'value="'.$name.'"'; ?>></b>
+      <b><input name="name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" type="text"  class="my-input " placeholder="Name" style="width:75%" <?php echo 'value="'.$name.'"'; ?>></b>
       </p>
       <br>
       <p>
@@ -149,11 +228,16 @@ header{
     </form>
 </div>
 
+
+
+
+
+</body>
 <?php
 echo '<script>
   function myfunction() {
   
-  if (confirm("Are you sure you want to update this data?")) {
+  if (confirm("Are you sure?")) {
     document.getElementById("form1").action = "update.php?id='.$id.'";
   } else {
     document.getElementById("form1").action = "updatestu.php?id='.$id.'";
@@ -162,8 +246,4 @@ echo '<script>
 }
 
 </script>';?>
-
-
-
-</body>
 </html>

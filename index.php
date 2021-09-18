@@ -22,6 +22,12 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   
 }
+.para2{
+    position:absolute;
+    bottom:22%;
+    left:60%;
+    color:#fff;
+}
 /* 
 button {
   background-color: #036875;
@@ -47,7 +53,7 @@ button {
 
 </style>
 </head>
-<body style="background: linear-gradient(to left, #03553a, #03558a);">
+<body style="background: linear-gradient(to left, #03553a, #03558a);" style="user-select:none;">
     
 
 <!-- <div class="box" ">
@@ -104,6 +110,9 @@ button {
                     <img src="img/login.svg" class="image">
                     <p class="para">
                       Are you a student ? <a href="stulogin.php">Login here</a>
+                    </p><br>
+                    <p class="para2">
+                      Are you a Data operator ? <a href="dataIndex.php">Login here</a>
                     </p>
                 </div>
             </div>

@@ -5,8 +5,9 @@ include "connect.php";
 if(isset($_POST["submit"]))
 {
 	$roll=$_POST["roll"];
+	$pin=$_POST["pin"];
     	
-	$sql="select roll from students where roll=$roll";
+	$sql="select roll from students where roll=$roll AND pin=$pin AND status='1' ";
 	$result=mysqli_query($link,$sql);
 	$n=mysqli_num_rows($result);
 	if($n==1){

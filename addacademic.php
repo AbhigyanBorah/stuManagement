@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -62,7 +59,7 @@ header {
 
  ?>   
 </head>
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -97,7 +94,7 @@ header {
                     <h5>Board: <b> <?php echo $board ?></b><h5>
                     </p>
                     <p>
-                    <select class="my-select my-center" name="sem" id="sem" style="width:300px;margin-top:2%;margin-left:2%;">
+                    <select class="my-select my-center" name="sem" id="sem" style="width:300px;margin-top:2%;margin-left:2%;" required>
                                                <?php if(isset($_GET["sem"])){
                                                     echo '<option disabled selected>'.$sem.'</option>';
                                                 }

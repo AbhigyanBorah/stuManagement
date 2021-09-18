@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 
@@ -96,7 +93,7 @@ include "session.php"
 
  ?>
 
-<body class="parallax">
+<body class="parallax" style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -206,6 +203,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -222,26 +220,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                                 echo'<td style="">'.$row[3].'</td>';
                                 echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                     echo'<td style="color:red">'.$row[5].'</td>';
                                 
                                 }
                                 else{
                                 echo'<td style="">'.$row[5].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[6].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[6].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
+                                    echo'<td style="color:red">'.$row[7].'</td>';
+                                    }
+                                    else{
+                                        echo'<td style="">'.$row[7].'</td>';
+                                    }
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[8].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[8].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[9].'</td>';
                                 }
                                 else{
@@ -268,6 +272,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -284,26 +289,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                                 echo'<td style="">'.$row[3].'</td>';
                                 echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                     echo'<td style="color:red">'.$row[5].'</td>';
                                 
                                 }
                                 else{
                                 echo'<td style="">'.$row[5].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[6].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[6].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
+                                    echo'<td style="color:red">'.$row[7].'</td>';
+                                    }
+                                    else{
+                                        echo'<td style="">'.$row[7].'</td>';
+                                    }
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[8].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[8].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[9].'</td>';
                                 }
                                 else{
@@ -330,6 +341,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -346,26 +358,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                                 echo'<td style="">'.$row[3].'</td>';
                                 echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                     echo'<td style="color:red">'.$row[5].'</td>';
                                 
                                 }
                                 else{
                                 echo'<td style="">'.$row[5].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[6].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[6].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
+                                    echo'<td style="color:red">'.$row[7].'</td>';
+                                    }
+                                    else{
+                                        echo'<td style="">'.$row[7].'</td>';
+                                    }
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[8].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[8].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[9].'</td>';
                                 }
                                 else{
@@ -392,6 +410,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -408,26 +427,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                                 echo'<td style="">'.$row[3].'</td>';
                                 echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                     echo'<td style="color:red">'.$row[5].'</td>';
                                 
                                 }
                                 else{
                                 echo'<td style="">'.$row[5].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[6].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[6].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
+                                    echo'<td style="color:red">'.$row[7].'</td>';
+                                    }
+                                    else{
+                                        echo'<td style="">'.$row[7].'</td>';
+                                    }
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[8].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[8].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[9].'</td>';
                                 }
                                 else{
@@ -454,6 +479,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -470,26 +496,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                                 echo'<td style="">'.$row[3].'</td>';
                                 echo'<td style="text-align:left;">'.$row[4].'</td>';
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                     echo'<td style="color:red">'.$row[5].'</td>';
                                 
                                 }
                                 else{
                                 echo'<td style="">'.$row[5].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[6].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[6].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
+                                    echo'<td style="color:red">'.$row[7].'</td>';
+                                    }
+                                    else{
+                                        echo'<td style="">'.$row[7].'</td>';
+                                    }
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[8].'</td>';
                                 }
                                 else{
                                     echo'<td style="">'.$row[8].'</td>';
                                 }
-                                if($row["percentage"]<35){
+                                if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[9].'</td>';
                                 }
                                 else{
@@ -516,6 +548,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
                            
@@ -532,26 +565,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -568,6 +607,153 @@ include "session.php"
                     </tbody>
                 </table>
                 <p></p>
+                <hr>
+                <p class="my-xlarge">
+                   BACKLOG
+                </p>
+                <table class="my-table-all my-centered my-card">
+                    <thead>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Semester</th>                      
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Total</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;">Status</th>
+                            <th class="my-text-white my-medium" style=" background-color: #e95a5a;"></th>
+                           
+                       
+                    </thead>
+                    <tbody>
+                    <?php
+                      include "connect.php";
+                      $sql="select * from back where roll='$id';";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[1].'</td>';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                            echo'<td style=""><a href="updateback.php" class="my-btn my-indigo">Update</a></td>';
+                               
+                                
+                        echo'</tr>';
+                          }   
+                      ?>
+
+
+                    </tbody>
+                </table>
+<p></p>
+<p></p>
+                <p></p>
+                <hr>
+                <p class="my-xlarge">
+                   Edited Marks
+                </p>
+                <table class="my-table-all my-centered my-card">
+                    <thead>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Semester</th>                      
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;"></th>
+                           
+                       
+                    </thead>
+                    <tbody>
+
+                        <?php
+                      include "connect.php";
+                      $sql="select * from edited where roll='$id';";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[1].'</td>';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                          
+                               
+                                
+                        echo'</tr>';
+                          }   
+                      ?>
+
+
+                    </tbody>
+                </table>
+                <p></p>
+
+
             </div>
         </div>
 

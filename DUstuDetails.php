@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 
@@ -10,6 +7,8 @@ include "session.php"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/my.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
     <title>Student Details</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Varela+Round&display=swap');
@@ -90,6 +89,7 @@ include "session.php"
     $qualification=$row["qualification"];
     $batch=$row["batch"];
     $brd=$row["board"];
+    $pin=$row["pin"];
 
     $str1="Select bname from boards where bid='$brd'";
     $result1=mysqli_query($link,$str1);
@@ -131,6 +131,7 @@ include "session.php"
 
                     <center>
                     <p>
+                    <div id="pdf">
                     <h1><b>
                             <?php echo $name ?>
                         </b></h1>
@@ -188,8 +189,13 @@ include "session.php"
                                 <?php echo $board ?>
                             </b>
                         </p><br>
+                        <p>
+                            Pin: <b> <?php echo $pin ?> </b>
+
+                        </p>
                 
                     </div>
+</div>
                     </center>
                 </div>
             </div>
@@ -197,6 +203,7 @@ include "session.php"
 
         <div class="my-container my-white" style="border-radius:5px; margin-top:20px;">
             <p class="my-center my-xlarge">M   A   R   K   S</p>
+            <div id="pdfm">
             <div class="my-responsive">
                 <p>
                     Semester 1
@@ -208,6 +215,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -237,6 +245,12 @@ include "session.php"
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
                             if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
@@ -269,6 +283,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -285,26 +300,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -330,6 +351,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -346,26 +368,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -392,6 +420,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -408,26 +437,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -453,6 +488,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -482,6 +518,12 @@ include "session.php"
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
                             if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
@@ -515,6 +557,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                            
@@ -531,26 +574,32 @@ include "session.php"
                             echo'<tr class="my-white my-medium" style="border-width: 0px;">';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -578,6 +627,7 @@ include "session.php"
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
                             <th class="my-text-white my-medium" style=" background-color: #770677;"></th>
@@ -596,26 +646,32 @@ include "session.php"
                             echo'<td style="">'.$row[1].'</td>';
                             echo'<td style="">'.$row[3].'</td>';
                             echo'<td style="text-align:left;">'.$row[4].'</td>';
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                                 echo'<td style="color:red">'.$row[5].'</td>';
                             
                             }
                             else{
                             echo'<td style="">'.$row[5].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[6].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[6].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[8].'</td>';
                             }
                             else{
                                 echo'<td style="">'.$row[8].'</td>';
                             }
-                            if($row["percentage"]<35){
+                            if($row["grade"]=="F"){
                             echo'<td style="color:red">'.$row[9].'</td>';
                             }
                             else{
@@ -632,9 +688,87 @@ include "session.php"
                     </tbody>
                 </table>
                 <p></p>
-            </div>
-        </div>
 
+                <p></p>
+                <p></p>
+                <hr>
+                <p class="my-xlarge">
+                   Edited Marks
+                </p>
+                <table class="my-table-all my-centered my-card">
+                    <thead>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Semester</th>                      
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Code</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Subject Name</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Internal Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Final Marks</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Total</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Grade</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;">Status</th>
+                            <th class="my-text-white my-medium" style=" background-color: #770677;"></th>
+                           
+                       
+                    </thead>
+                    <tbody>
+
+                        <?php
+                      include "connect.php";
+                      $sql="select * from edited where roll='$id';";
+                      $result=mysqli_query($link,$sql);
+                      while($row=mysqli_fetch_array($result))
+                          {
+                            echo'<tr class="my-white my-medium" style="border-width: 0px;">';
+                            echo'<td style="">'.$row[1].'</td>';
+                            echo'<td style="">'.$row[3].'</td>';
+                            echo'<td style="text-align:left;">'.$row[4].'</td>';
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[5].'</td>';
+                            
+                            }
+                            else{
+                            echo'<td style="">'.$row[5].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[6].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[6].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                                echo'<td style="color:red">'.$row[7].'</td>';
+                                }
+                                else{
+                                    echo'<td style="">'.$row[7].'</td>';
+                                }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[8].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[8].'</td>';
+                            }
+                            if($row["grade"]=="F"){
+                            echo'<td style="color:red">'.$row[9].'</td>';
+                            }
+                            else{
+                                echo'<td style="">'.$row[9].'</td>';
+                            }
+                          
+                               
+                                
+                        echo'</tr>';
+                          }   
+                      ?>
+
+
+                    </tbody>
+                </table>
+                <p></p>
+       
+            </div>
+                        </div>
+            <input  type="button" value="Print Marksheet" id="PrintNow"  class="my-btn my-right my-block my-padding my-text-white" style="border-radius:5px; width:260px;  margin:20px 0px; background-color: #770677;"/>
+<br>
+        </div>
 
 
         
@@ -657,6 +791,24 @@ include "session.php"
     }
   }
 ?>
+
+<script>
+    $("#PrintNow").on("click", function () {
+            var divContents = $("#pdf").html();
+            var divContentsM = $("#pdfm").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>Mark sheet</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write(divContentsM);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.document.close();
+            
+            printWindow.print();
+            
+        });
+        </script>
 
 </body>
 

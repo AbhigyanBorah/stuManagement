@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -51,7 +48,7 @@ header {
  }
  </script>
 </head>
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -83,7 +80,7 @@ header {
                 <tbody>
                 <?php
                       include "connect.php";
-                      $sql="select * from students where board=3;";
+                      $sql="select * from students where board=3 and status=1;";
                       $result=mysqli_query($link,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
@@ -127,6 +124,9 @@ $(document).ready(function() {
     }
     elseif($x=="up2"){
       echo '<script> alert("Student Details Updated"); </script>';
+    }
+    elseif($x=="approved"){
+      echo '<script> alert("Student Approved"); </script>';
     }
   }
 ?>

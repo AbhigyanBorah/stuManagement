@@ -57,9 +57,14 @@
             $result1=mysqli_query($link,"insert into back values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$back','$percentage')"); 
         } 
         
+        $result=mysqli_query($link,"UPDATE STUDENTS SET status = '' where roll = '$roll' ");
+		$result=mysqli_query($link,"insert into academics values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$status','$percentage','null')");
+        
 
-		$result=mysqli_query($link,"insert into academics values('$roll','$sem','$bid','$scode','$sname','$internal','$final','$total','$grade','$status','$percentage')");
+        
      }
+
+    
 		if($result)
 		{
 			if($bid==1){
@@ -77,4 +82,6 @@
 			echo mysqli_error($link);	
 		}
 	}
+
+    
 ?>

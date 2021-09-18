@@ -22,9 +22,15 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   
 }
+.para2{
+    position:absolute;
+    bottom:22%;
+    left:60%;
+    color:#fff;
+}
 </style>
 </head>
-<body style="background: linear-gradient(to left, #03553a, #03558a);">
+<body style="background: linear-gradient(to left, #03553a, #03558a);" style="user-select:none;">
 
     <div class="container">
         <div class="forms-container">
@@ -36,7 +42,10 @@ input[type=text], input[type=password] {
                         
                     <input  type="text" placeholder="Enter Your Roll No." name="roll" required autocomplete="off">
                     </div>
-                                       
+                    <div class="input-feild" style="display:flex;">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" placeholder="Enter Your Pin" name="pin" required>
+                         </div>               
                      <button class="my-btn btn solid" type="submit" name="submit" >Login</button>
                                               
                      </div>
@@ -46,6 +55,10 @@ input[type=text], input[type=password] {
                 <p class="para">
                   Are you an admin ? <a href="index.php">Login here</a>
                 </p>
+                <br>
+                    <p class="para2">
+                      Are you a Data operator ? <a href="dataIndex.php">Login here</a>
+                    </p>
             </div>
         </div>
 

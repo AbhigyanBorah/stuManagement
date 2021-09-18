@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -87,7 +84,7 @@ header {
 
  ?>   
 </head>
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="max-width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:5px;">
@@ -147,8 +144,8 @@ header {
                           echo'<tr class="my-white" style="border-width: 0px;">';
                                 echo'<td>'.$row[3].'</td>';
                                 echo'<td>'.$row[4].'</td>';
-                                echo'<td><input type="text" name="internal" class="my-input my-center" value="'.$row[5].'"></input></td>';
-                                echo'<td><input type="text" name="final" class="my-input my-center" value="'.$row[6].'"></input></td>';
+                                echo'<td><input type="number" min="0" max="30" name="internal" class="my-input my-center" value="'.$row[5].'"></input></td>';
+                                echo'<td><input type="number" min="0" max="70" name="final" class="my-input my-center" value="'.$row[6].'"></input></td>';
                                 echo'<td ><input type="hidden"  name="scode" class="my-input" value="'.$row[3].'"></input></td>';
                                 echo'<td><input type="hidden"  name="sname"  class="my-input" value="'.$row[4].'"></input></td>';
                                 echo'<td ><input type="hidden"  name="roll" class="my-input" value="'.$roll.'"></input></td>';

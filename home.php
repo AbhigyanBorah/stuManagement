@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 
 <!doctype html>
 <html>
@@ -75,13 +72,23 @@ include "session.php"
 
 </style>
 </head>
-<body class="parallax">
+<body class="parallax" style="user-select:none;">
 
 
     <div class="sidenav my-bar-block my-card-4 my-animate-left" style="display:none;" id="mySidebar">
+    <a href="pending.php" class="my-bar-item my-large">Pending Request 
+        
+  <?php 
+			include ("connect.php");
+      $str='select * from students where status="";';
+			$result=mysqli_query($link,$str);
+     	$n=mysqli_num_rows($result);
+		?>
+      </i>&nbsp;<span class="my-badge my-red"><?php echo $n; ?></span></a>
         <a href="javascript:void(0)" class="closebtn" onclick="my_close()"><i class="fa fa-angle-double-left my-xxlarge"></i></a>
         <a href="changepwd.php" class="my-bar-item">Change Password</a>
         <a href="logout.php" class="my-bar-item">Log Out</a>
+    
     </div>
 
     <a href="javascript:void(0)" class="mya my-hide-small my-hide-medium" id="openNav" style="margin-top:40px;" onclick="my_open()"><i class="fa fa-angle-double-right my-xxxlarge"></i></a>
@@ -108,7 +115,7 @@ include "session.php"
                   <div class="overlay" style="border-radius: 10px; ">
                            <?php 
                            include "connect.php";
-                            $str="select * from students where board=1;";
+                            $str="select * from students where board=1  and status = 1;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>
@@ -125,7 +132,7 @@ include "session.php"
                 <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center; background: linear-gradient(to top, #03553a, #03558a);">
                   <div class="overlay2" style="border-radius: 10px;">
                           <?php 
-                            $str="select * from students where board=2;";
+                            $str="select * from students where board=2 and  status = 1;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>
@@ -142,7 +149,7 @@ include "session.php"
                 <div class="my-card" style="height: 270px;border-radius: 10px; text-align: center;background: linear-gradient(to top, #03553a, #03558a);">
                   <div class="overlay3" style="border-radius: 10px;">
                          <?php 
-                            $str="select * from students where board=3;";
+                            $str="select * from students where board=3 and  status = 1;";
                             $result=mysqli_query($link,$str);
                             $n=mysqli_num_rows($result);
                           ?>

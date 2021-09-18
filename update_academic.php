@@ -1,7 +1,4 @@
-<?php
 
-include "session.php"
-?>
 <!doctype html>
 <html>
 <head>
@@ -78,7 +75,7 @@ header {
 </head>
 
 
-<body>
+<body style="user-select:none;">
 <header>
 <div class="my-container my-card-4" style="height: 150px; width:1600px; background: linear-gradient(to left, #03553a, #03558a);  border-radius: 0 0 50% 50%/0 0 100% 100%; margin:-17px auto 0;">
          <div class="my-container my-xxlarge" style="text-align: center; color: rgb(233, 232, 232);margin-top:10px;">
@@ -133,55 +130,8 @@ header {
                     <p>
                     <button type="submit" name="submit" class="my-btn" style="color:white; background: linear-gradient(to left, #03553a, #03558a); width:200px;" id="proceed">Proceed &nbsp;&nbsp; <i class="fa fa-angle-double-right my-large"></i></button>
                     </p>   
-   <!-- </form>
-   <br>
-   <?php if(isset($_GET["sem"])){
-      echo '<div class="my-container" id="show" >';
-   }
-   else {
-   echo '<div class="my-container" id="show" hidden >';
-  } ?>
-  
-   <form method="post" action="update_marks.php" id="form2" class="my-content" onsubmit="return validation();">
-  <center>
-   <hr style="width:98%; margin: 0 auto;  border-style:solid; border-width: .3px;">
-        <br>
-        <p>
-          <label>Marks obtained in <?php echo $row3[2]  ?> : </label>  
-          <input class="inp" type="int" name="sub1" <?php echo 'value="'.$row4[3].'"'; ?> required></p>
-       <p>
-        <label for="sub2">Marks obtained in <?php echo $row3[3]  ?> : </label>
-        <input class="inp" type="int"name="sub2" <?php echo 'value="'.$row4[4].'"'; ?> required></p>
-        <p>
-        <label for="sub3">Marks obtained in <?php echo $row3[4]  ?> : </label>
-        <input class="inp" type="int"name="sub3" <?php echo 'value="'.$row4[5].'"'; ?> required></p>
-        <p>
-        <label for="sub4">Marks obtained in <?php echo $row3[5]  ?> : </label>
-        <input class="inp" type="int"name="sub4" <?php echo 'value="'.$row4[6].'"'; ?> required></p>
-        <p>
-        <label for="sub5">Marks obtained in <?php echo $row3[6]  ?> : </label>
-        <input class="inp" type="int"name="sub5" <?php echo 'value="'.$row4[7].'"'; ?> required></p>
-        <p>
-          <br>
-          <p>
-        <label for="sub5">CGPA Obtained : </label>
-        <input class="inp" type="int"name="cgpa" placeholder="Enter the Mark secured"required></p>
-        <p>
-        <p>
-        <label for="sub5">Status : </label>
-        
-        <input class="my-radio" type="radio"name="status" value="Passed" required><label for="sub5">Passed </label>&nbsp;
-        <input class="my-radio" type="radio"name="status" value="Failed"><label for="sub5">Failed </label> </p>
-        <p>
-
-        <input class="inp" type="int"name="roll" hidden <?php echo' value="'.$roll.'"';?> required></p>
-        <input class="inp" type="int"name="sem" hidden <?php echo' value="'.$sem.'"';?> required></p>
-        <input class="inp" type="int"name="bid" hidden <?php echo' value="'.$brd.'"';?> required></p>
-
-        <button type="submit" name="submit" class="my-btn my-right" style="color:white; background: linear-gradient(to left, #03553a, #03558a); width:200px;">Upload &nbsp;&nbsp; <i class="fa fa-angle-double-top my-large"></i></button>
-        </p>
-  </center>
-   </form> -->
+   </form>
+   
   </div>
 </div>
 
